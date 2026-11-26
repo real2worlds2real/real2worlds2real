@@ -20,6 +20,27 @@ Start a reconstruction with the [agent module workflow](end_to_end/docs/reconstr
 
 ## Demos
 
+### Real Robot
+
+<table>
+  <tr>
+    <td width="50%"><video src="https://github.com/user-attachments/assets/fb331a54-a5bb-4163-8788-1d12cccdd1ec" controls></video></td>
+    <td width="50%"><video src="https://github.com/user-attachments/assets/a7254908-0239-4a49-8969-71dd2717fe54" controls></video></td>
+  </tr>
+  <tr>
+    <td width="50%"><video src="https://github.com/user-attachments/assets/62120449-aec9-4d36-aa19-8d7adfa50f79" controls></video></td>
+    <td width="50%"><video src="https://github.com/user-attachments/assets/891a9233-c2d3-46ed-8ba5-dd44b8067148" controls></video></td>
+  </tr>
+  <tr>
+    <td width="50%"><video src="https://github.com/user-attachments/assets/ef91cf6c-b585-4544-b1f1-a384eccdac75" controls></video></td>
+    <td width="50%"><video src="https://github.com/user-attachments/assets/671c8806-6378-4c84-8216-77cc7312800b" controls></video></td>
+  </tr>
+  <tr>
+    <td width="50%"><video src="https://github.com/user-attachments/assets/667171b0-b92e-49c4-8795-dcaad1ff87cc" controls></video></td>
+    <td width="50%"><video src="https://github.com/user-attachments/assets/72c8d713-eb26-4c10-882c-7affe5f98852" controls></video></td>
+  </tr>
+</table>
+
 ### Simulation
 
 <table>
