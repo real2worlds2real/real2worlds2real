@@ -81,3 +81,17 @@ The source code and documentation written for this project are released under th
 The licence does not cover what this repository carries from others, which keeps its own terms:
 
 - For bundled robot models, Blender Cell Fracture and patches to upstream code, see the [repository notices](THIRD_PARTY.md). Optional tabletop grasp synthesis requires a compatible solver supplied separately under its own terms. See the [grasp setup guide](real2sim/docs/robots/grasping.md).
+
+## Citation
+
+```bibtex
+@misc{real2worlds2real,
+  title         = {Real2Worlds2Real: Scaling Self-Improving Agentic Real2Sim2Real for Robot Manipulation},
+  author        = {Gu, Jinzhong and Chen, Jiakai and Cao, Xinyi and Shen, Yan and Sui, Hangke and Zheng, Shutian and
+                   Xiao, Xiang and Lu, Haoran and Xu, Fan and Shi, Lu and Shi, Daochen and Zhang, Ruihua and Zhan, Wei and
+                   Tomizuka, Masayoshi and Wu, Ruihai},
+  year          = {2026},
+  eprint        = {2611.31098},
+  archivePrefix = {arXiv}
+}
+```
