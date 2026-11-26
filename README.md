@@ -18,6 +18,21 @@ Simulation success is intermediate evidence; real validation is run and reported
 
 Start a reconstruction with the [agent module workflow](end_to_end/docs/reconstruction.md). One `astra-e2e` run can use calibrated cameras and poses, individual object workers, native physics checks and scene assembly. Choose an object, scene or policy handover as the goal.
 
+## Demos
+
+<table>
+  <tr>
+    <td width="33%"><video src="https://github.com/user-attachments/assets/86f26d17-8d71-42b9-97ce-14b3a6071050" controls></video></td>
+    <td width="33%"><video src="https://github.com/user-attachments/assets/2fb208f8-2a69-4426-b12d-c7fde06a3a1e" controls></video></td>
+    <td width="33%"><video src="https://github.com/user-attachments/assets/3dccb9c1-250c-4b47-b4fc-1573cb4e1e6b" controls></video></td>
+  </tr>
+  <tr>
+    <td width="33%"><video src="https://github.com/user-attachments/assets/bbde5ee6-dbc1-4ccd-8f17-95589e0d35bb" controls></video></td>
+    <td width="33%"><video src="https://github.com/user-attachments/assets/c4fb0301-8a04-4231-8bc2-870f70017040" controls></video></td>
+    <td width="33%"><video src="https://github.com/user-attachments/assets/53b0d2ad-8009-41ac-b5c4-c19b52891721" controls></video></td>
+  </tr>
+</table>
+
 ## Public interfaces
 
 | Component | Python package | Command |
