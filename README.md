@@ -20,6 +20,8 @@ Start a reconstruction with the [agent module workflow](end_to_end/docs/reconstr
 
 ## Demos
 
+### Simulation
+
 <table>
   <tr>
     <td width="33%"><video src="https://github.com/user-attachments/assets/86f26d17-8d71-42b9-97ce-14b3a6071050" controls></video></td>
