@@ -1,0 +1,11 @@
+{
+ "_note": "The station author's interaction setup for workspace_lift_factory.py on the example scene (README.md here). The task-workspace route delivers no robot placement and no metric scale; these numbers are this station's declaration.",
+ "text": "lift the blue cup off the desk",
+ "kind": "lift",
+ "target": "blue_cup",
+ "support": "worktop",
+ "robot": "vega_1p_sharpa_arm",
+ "base": {"xy": [0.0, 0.60], "yaw_deg": -90.0},
+ "lift_m": 0.08,
+ "hold_within_m": 0.12
+}

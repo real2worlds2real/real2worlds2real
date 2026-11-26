@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "capabilities": ["mpm", "finite_static_boxes"],
+  "argv": ["/path/to/target-runtime-python", "/path/to/real2sim/scripts/simulate_particle_materials.py",
+           "{configuration}", "--output", "{output}", "--frames", "{frames}", "--fps", "{fps}",
+           "--viz", "none", "--device", "cuda:0"]
+}

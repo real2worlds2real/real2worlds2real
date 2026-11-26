@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "capabilities": ["train", "transcode", "refine"],
+  "argv": ["/path/to/host-python", "/path/to/real2sim/scripts/gaussian_refine_adapter.py",
+           "--base-runner", "/path/to/base-3dgrut-runner.json",
+           "--worker-runner", "/path/to/3dgrut-refinement-worker.json",
+           "--restoration-runner", "/path/to/fixer-view-runner.json",
+           "--request", "{request}", "--output", "{output}"]
+}

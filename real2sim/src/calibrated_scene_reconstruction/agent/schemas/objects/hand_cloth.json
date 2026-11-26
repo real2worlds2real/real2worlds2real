@@ -1,0 +1,199 @@
+{
+  "name": "hand_cloth",
+  "input": {
+    "type": "object",
+    "properties": {
+      "session": {
+        "type": "string",
+        "minLength": 1
+      },
+      "object": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9_-]+$"
+      },
+      "candidate": {
+        "type": "string",
+        "minLength": 1
+      },
+      "hand_plan": {
+        "type": "string",
+        "minLength": 1
+      },
+      "criterion": {
+        "type": "string",
+        "minLength": 1
+      },
+      "case": {
+        "enum": [
+          "nominal",
+          "low",
+          "high"
+        ]
+      },
+      "inside_finger": {
+        "enum": [
+          "either",
+          "thumb",
+          "index"
+        ]
+      },
+      "minimum_normal_alignment": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+      },
+      "closure_descent_m": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 0.03
+      },
+      "require_contact_free_approach": {
+        "type": "boolean"
+      },
+      "pinch_settle_seconds": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 2
+      },
+      "track_pinch_material": {
+        "type": "boolean"
+      },
+      "fixture_proof": {
+        "type": "string",
+        "minLength": 1
+      },
+      "particle_friction_proof": {
+        "type": "string",
+        "minLength": 1
+      },
+      "register": {
+        "type": "boolean"
+      },
+      "pinch_axis": {
+        "type": "array",
+        "items": {
+          "type": "number"
+        },
+        "minItems": 3,
+        "maxItems": 3,
+        "description": "Source-reviewed longitudinal pinch axis in candidate body coordinates; evaluated on actual pad positions"
+      },
+      "minimum_pinch_axis_alignment": {
+        "type": "number",
+        "exclusiveMinimum": 0,
+        "maximum": 1
+      },
+      "pinch_material_axis": {
+        "type": "array",
+        "items": {
+          "type": "number"
+        },
+        "minItems": 3,
+        "maxItems": 3,
+        "description": "Longitudinal axis in intrinsic sheet coordinates; infer its actual local direction at the selected material patch, including after native approach"
+      },
+      "material_contact_mode": {
+        "enum": ["same_component", "single_patch"],
+        "default": "same_component",
+        "description": "Track both actual interior contact regions on the same connected sheet. Use single_patch when the input requires both fingers on the original small material disk."
+      },
+      "closure_mode": {
+        "enum": [
+          "open_descent",
+          "coupled"
+        ],
+        "default": "open_descent",
+        "description": "Default: finish descent with open fingers, verify actual capture pose, then close. Explicit coupled mode preserves simultaneous descent/closure."
+      },
+      "open_descent_seconds": {
+        "type": "number",
+        "minimum": 0.04,
+        "maximum": 5,
+        "default": 0.5
+      },
+      "closure_contact_links": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        },
+        "uniqueItems": true,
+        "description": "Rigid partners expected to contact a force-limited closing hand. Only command-pose clearance is excluded; actual native collision checks remain unchanged."
+      },
+      "closure_contact_basis": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Source/task reason for the expected rigid closure contacts."
+      },
+      "pinch_material_frame": {
+        "enum": [
+          "spatial",
+          "opening_plane"
+        ],
+        "description": "Use one declared frame consistently for material direction proposals and actual pad validation; opening_plane suits a top-down inside/outside pinch."
+      },
+      "timing": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "opening": {
+            "type": "number",
+            "minimum": 0.25,
+            "maximum": 5
+          },
+          "opening_hold": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 5
+          },
+          "approach": {
+            "type": "number",
+            "minimum": 0.25,
+            "maximum": 5
+          },
+          "pinch": {
+            "type": "number",
+            "minimum": 0.25,
+            "maximum": 5
+          }
+        },
+        "description": "Finite test motion choices, distinct from material hypotheses. Native conditions and the exact same control motion remain required."
+      }
+    },
+    "required": [
+      "session",
+      "object",
+      "candidate",
+      "hand_plan",
+      "criterion"
+    ],
+    "additionalProperties": false
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "ok": {
+        "type": "boolean"
+      },
+      "pass": {
+        "type": "boolean"
+      },
+      "task_approved": {
+        "const": false
+      },
+      "evidence_images": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "ok",
+      "pass",
+      "task_approved",
+      "evidence_images"
+    ],
+    "additionalProperties": true
+  }
+}

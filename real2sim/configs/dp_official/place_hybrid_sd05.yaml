@@ -1,0 +1,15 @@
+defaults:
+  - place_hybrid
+  - _self_
+
+task:
+  shape_meta:
+    obs:
+      robot_eef_pose:
+        shape: [9]
+        type: low_dim
+      hand_qpos:
+        shape: [22]
+        type: low_dim
+  dataset:
+    low_dim_dropout: 0.5

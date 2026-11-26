@@ -1,0 +1,36 @@
+{
+  "name": "revalidate",
+  "input": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+      "session": {"type": "string", "minLength": 1},
+      "object": {"type": "string", "pattern": "^[A-Za-z0-9_-]+$"},
+      "inherited_freeze": {"$ref": "#/$defs/evidence_path"},
+      "inherited_scene_graph": {"$ref": "#/$defs/evidence_path"}
+    },
+    "required": ["session", "object", "inherited_freeze", "inherited_scene_graph"],
+    "additionalProperties": false,
+    "$defs": {
+      "evidence_path": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^[^/\\\\:][^\\\\:]*$",
+        "description": "Existing file relative to this session. Absolute paths, parent traversal and symlinks escaping the session are rejected."
+      }
+    }
+  },
+  "output": {
+    "type": "object",
+    "required": ["ok", "source_pass", "native_approval", "active_candidate_changed", "round_dir", "evidence_images"],
+    "properties": {
+      "ok": {"type": "boolean"},
+      "source_pass": {"type": "boolean"},
+      "native_approval": {"const": false},
+      "active_candidate_changed": {"const": false},
+      "round_dir": {"type": "string"},
+      "evidence_images": {"type": "array", "items": {"type": "string"}}
+    },
+    "additionalProperties": true
+  }
+}

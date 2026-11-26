@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "capabilities": ["newton", "usd_mesh", "rigid", "articulated", "deformable", "hybrid", "static_environment_collision", "rigid_deformable_contact", "scene_video"],
+  "argv": ["/path/to/rendering-environment-python", "/path/to/real2sim/scripts/newton_scene_adapter.py",
+           "--native-runtime", "/path/to/isolated-newton-1.7-packages",
+           "--scene", "{scene}", "--output", "{output}", "--manifest", "{manifest}",
+           "--review-request", "{review_request}"]
+}

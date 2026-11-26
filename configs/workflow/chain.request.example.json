@@ -1,0 +1,31 @@
+{
+ "name": "desk_cups",
+ "task": "pick up the blue cup and put it into the white cup",
+ "observations": [
+  "/absolute/path/to/my_capture/walkaround.mp4"
+ ],
+ "goal": "real_preparation",
+ "robot": "vega_1p_sharpa_arm",
+ "station": {
+  "site": "/absolute/path/to/site.json",
+  "task_id": "desk_cups_twin",
+  "factory": "/absolute/path/to/real2sim/examples/station/cup_nest_factory.py:build",
+  "policy_io": {
+   "observation": [
+    "TCP minus blue cup centre (3, m)",
+    "blue cup bottom minus white cup opening (3, m)",
+    "hand closure (1)",
+    "blue cup tilt / 90 deg (1)"
+   ],
+   "action_dim": 4,
+   "action": "TCP delta (3, x0.01 m per step) + hand closure delta (1, x0.05 per step), each in [-1, 1]",
+   "interface": "state_vector"
+  },
+  "num_envs": 1,
+  "max_steps": 200
+ },
+ "campaign": {
+  "name": "c1",
+  "run": "r1"
+ }
+}

@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "argv": ["/path/to/difix-python", "/path/to/real2sim/scripts/difix_view_adapter.py",
+           "--checkout", "/path/to/Difix3D", "--weights", "/path/to/local-difix-ref",
+           "--request", "{request}", "--output", "{output}"]
+}

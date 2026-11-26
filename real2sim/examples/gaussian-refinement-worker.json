@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "argv": ["/path/to/3dgrut-python", "/path/to/real2sim/scripts/3dgrut_refinement_worker.py",
+           "--checkout", "/path/to/3dgrut", "--mode", "{mode}", "--source", "{source}",
+           "--request", "{request}", "--output", "{output}"]
+}

@@ -1,0 +1,126 @@
+{
+ "name": "franka_panda",
+ "kind": "arm",
+ "urdf": {
+  "body": "assets/robots/arms/franka_panda/franka_panda.urdf"
+ },
+ "base": {
+  "type": "fixed",
+  "mount": "pedestal",
+  "height": "support",
+  "standoff": [
+   0.12,
+   0.3
+  ],
+  "lateral": [
+   -0.2,
+   0.2
+  ],
+  "yaw_tol_deg": 15,
+  "_note": "0.855 m reach: the pedestal stands at the support's edge"
+ },
+ "drives": [
+  {
+   "match": "^panda_joint",
+   "kp": 4000.0,
+   "max_force": 2000.0
+  },
+  {
+   "match": "^panda_finger",
+   "kp": 2000.0,
+   "max_force": 200.0
+  }
+ ],
+ "home": {
+  "panda_joint1": 0.0,
+  "panda_joint2": -0.785,
+  "panda_joint3": 0.0,
+  "panda_joint4": -2.356,
+  "panda_joint5": 0.0,
+  "panda_joint6": 1.571,
+  "panda_joint7": 0.785,
+  "panda_finger_joint1": 0.04,
+  "panda_finger_joint2": 0.04
+ },
+ "arms": {
+  "right": {
+   "ik_joints": [
+    "panda_joint1",
+    "panda_joint2",
+    "panda_joint3",
+    "panda_joint4",
+    "panda_joint5",
+    "panda_joint6",
+    "panda_joint7"
+   ],
+   "tcp_link": "panda_hand",
+   "tcp_offset": [
+    0,
+    0,
+    0.1034
+   ],
+   "tcp_axes": {
+    "approach": "+z",
+    "closing": "+y"
+   },
+   "ee": {
+    "type": "parallel",
+    "joints": "^panda_finger_joint",
+    "max_width": 0.08,
+    "close": {
+     "mode": "targets",
+     "open": {
+      "panda_finger_joint1": 0.04,
+      "panda_finger_joint2": 0.04
+     },
+     "closed": {
+      "panda_finger_joint1": 0.0,
+      "panda_finger_joint2": 0.0
+     }
+    },
+    "grasp": "antipodal"
+   }
+  }
+ },
+ "cameras": [
+  {
+   "name": "wrist",
+   "role": "wrist",
+   "link": "panda_hand",
+   "quat_wxyz": [
+    0.0,
+    1.0,
+    0.0,
+    0.0
+   ],
+   "K": [
+    [
+     300,
+     0,
+     320
+    ],
+    [
+     0,
+     300,
+     240
+    ],
+    [
+     0,
+     0,
+     1
+    ]
+   ],
+   "size": [
+    640,
+    480
+   ],
+   "_note": "USD cameras look along -z; the Panda hand's fingers point +z: rotate 180 deg about x",
+   "pos": [
+    0.06,
+    0.0,
+    0.0
+   ],
+   "_mount": "on the hand's side (hand body x within +-0.03 m), looking along the fingers"
+  }
+ ]
+}

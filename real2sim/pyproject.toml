@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+license = "MIT"
+license-files = ["LICENSE"]
+name = "real2sim-harness"
+version = "0.2.0"
+description = "Astra-driven real2sim: editable, operable objects and metric, robot-ready scene twins, cousins and physics calibration from photos or video."
+# Real2Sim Harness runs on Python 3.11 and 3.12.
+# The GPU scene pipeline (calibrated_scene_reconstruction) runs in the pinned Python 3.11 environments that setup/*.sh builds.
+requires-python = ">=3.11,<3.13"
+dependencies = ["Pillow>=10", "numpy>=2,<3", "opencv-python-headless>=4.11,<5"]
+
+[project.optional-dependencies]
+# agent harness (real2sim_harness)
+api = ["openai>=2,<4"]
+chatgpt = ["openai>=2,<4", "httpx>=0.28,<1", "PyJWT[crypto]>=2.10,<3"]
+vision = ["opencv-python-headless>=4.11,<5", "numpy>=2,<3"]
+video = ["imageio-ffmpeg>=0.6,<0.7", "opencv-python-headless>=4.11,<5", "av>=14,<18"]
+geometry = ["pycolmap>=4.2,<5"]
+fitting = ["scipy>=1.14,<2"]
+texture = ["xatlas>=0.0.9,<1"]
+simulation = ["numpy>=2,<3", "scipy>=1.14,<2"]
+solid = ["meshpy>=2026.1,<2027", "scipy>=1.14,<2"]
+scene = ["usd-core>=25.11,<27"]
+gaussian = ["usd-core>=26.11,<27", "plyfile>=1,<2"]
+dev = ["ruff>=0.9", "jsonschema>=4.23,<5"]
+# metric scene pipeline (calibrated_scene_reconstruction), CPU part; the heavy CUDA-specific dependencies are pinned in
+# setup/requirements-recon.lock.txt and built by setup/setup_env.sh
+scene-pipeline = ["scipy>=1.14,<2", "trimesh", "networkx", "matplotlib", "scikit-image", "threadpoolctl>=3.6,<4", "tifffile"]
+datasets = ["pandas", "pyarrow"]
+objects = ["mcp==2.3.0", "jsonschema>=4.26,<5"]
+collision-geometry = ["shapely==2.1.2", "mapbox-earcut==2.0.0", "rtree==1.4.1", "manifold3d==3.5.4"]
+
+[project.scripts]
+real2sim-harness = "real2sim_harness.cli:main"
+real2sim-harness-auth = "real2sim_harness.chatgpt_auth:main"
+calibrated-scene-reconstruction = "calibrated_scene_reconstruction.cli:main"
+# Existing clients and exported runner configurations.
+real2sim = "real2sim_harness.cli:main"
+real2sim-auth = "real2sim_harness.chatgpt_auth:main"
+ucb-remo = "real2sim_harness.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"calibrated_scene_reconstruction.agent" = ["schemas/objects/*.json"]
+"calibrated_scene_reconstruction" = ["compatibility.json"]
+"calibrated_scene_reconstruction.core" = ["capability_units/*.json"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]

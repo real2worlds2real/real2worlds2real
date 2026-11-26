@@ -1,0 +1,110 @@
+{
+  "schema": "astra_station_site_v1",
+  "name": "example_station",
+  "station_root": "/srv/astra/station",
+  "workspaces_root": "/srv/astra/workspaces",
+  "pinned_files": [
+    "task_tool.py",
+    "sim/server/serve.py",
+    "sim/server/core.py",
+    "sim/server/backend.py",
+    "station/station.py",
+    "station/eval_runner.py",
+    "station/program_runtime.py",
+    "station/sitecustomize.py"
+  ],
+  "sealed_files": [
+    "sim/sealed/task_partitions.json",
+    "sim/sealed/heldout_token"
+  ],
+  "splits": {
+    "development": [
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65
+    ],
+    "unseen_check": [
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80
+    ],
+    "sealed_count": 50
+  },
+  "worker_python": "/opt/astra/bin/python",
+  "venv": "/opt/astra",
+  "tasks_dir": "/srv/astra/task-directory/tasks",
+  "tools_dir": "policy_development/configs/station/tools",
+  "library_dir": "policy_development/library",
+  "decision": {
+    "transport": "claude_cli",
+    "model": "claude-opus-5-5"
+  },
+  "compute": {
+    "act_train": {
+      "ssh": "operator@training-host",
+      "jobs_root": "/srv/astra/training",
+      "python": "/opt/astra/bin/python",
+      "train": [
+        "bash",
+        "/opt/astra/train_act.sh",
+        "{prep}",
+        "{out}",
+        "{seed}",
+        "{epochs}"
+      ],
+      "need_free_mb": 9000,
+      "gpu_free_cmd": "nvidia-smi --query-gpu=memory.free --format=csv,noheader,nounits -i 0"
+    },
+    "act_runtime": {
+      "pkg": "/opt/astra/act-runtime",
+      "libstdcxx": "/opt/astra/lib/libstdc++.so.6"
+    }
+  },
+  "sandbox_gpu": false,
+  "work_library": {
+    "root": "/srv/astra/work-library",
+    "module": "policy_development/library/work_library.py"
+  },
+  "station_hosts": [
+    "sim"
+  ],
+  "tool_code": [
+    "policy_development/runtime",
+    "policy_development/station/client"
+  ],
+  "hosts": [
+    {
+      "name": "sim",
+      "ssh": "operator@sim-host",
+      "root": "/srv/astra/simulator",
+      "stations": "/srv/astra/simulator/stations",
+      "slots": 1,
+      "gpu": 0,
+      "up": "./station_up.sh {task} {rd} {rs} {nenv}"
+    }
+  ]
+}

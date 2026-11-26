@@ -1,0 +1,7 @@
+{
+ "_note": "Rigid parts of the real robot whose width is known, as recon.multiview measures them in a photo of the robot from the front: SAM 3 prompts (the first that finds the part is used) and the part's width in metres, left-right as the robot faces the camera. Widths are the base-frame y extents of the URDF visual meshes (assets/robots/humanoids/dexmate) by forward kinematics; the torso and head joints are pitch joints, which leave these widths as they are, so they hold whatever pose the real robot is in. Heights and the hands depend on the pose and are left out. A photo whose robot does not face the camera names its own parts in configs/<name>/multiview.json. `front_to_origin`: the part's front face lies this far ahead of the robot's base frame; its plane gives where the real robot stands and faces (recon.multiview -> autograph's photo_robot.base -> apps/placements.py's first candidate).",
+ "parts": [
+  {"prompts": ["mobile robot base", "robot base", "white robot base"], "width": 0.55, "front_to_origin": 0.344, "_source": "vega_1p base.glb: x -0.346..0.344, y -0.275..0.275, z 0..0.347 m; the robot's forward = +x (F_base_cam at x = 0.337 m)"},
+  {"prompts": ["robot head"], "width": 0.131, "_source": "vega_1 head_l3.glb, the head shell with the face: y -0.065..0.065 m (head_l1-l3 together 0.150 m: the neck housing below is wider than the shell)"}
+ ]
+}

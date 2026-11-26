@@ -1,0 +1,12 @@
+{
+ "schema": "astra_reward_term_v1",
+ "id": "other_object_moved",
+ "phase": "any",
+ "description": "Penalty on displacement of objects that must stay put.",
+ "inputs": [
+  "cloud+labels"
+ ],
+ "formula": "-k * max(0, |xy(label) - xy0(label)| - 0.005)",
+ "validated_on": [],
+ "cautions": "Cloud noise ~3-5 mm; use a dead band."
+}

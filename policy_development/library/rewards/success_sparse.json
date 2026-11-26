@@ -1,0 +1,12 @@
+{
+ "schema": "astra_reward_term_v1",
+ "id": "success_sparse",
+ "phase": "any",
+ "description": "The station's success flag at episode end.",
+ "inputs": [
+  "episode success"
+ ],
+ "formula": "+1 on success",
+ "validated_on": [],
+ "cautions": "Alone too sparse for long horizons."
+}

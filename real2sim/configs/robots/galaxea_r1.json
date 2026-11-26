@@ -1,0 +1,109 @@
+{
+ "name": "galaxea_r1",
+ "kind": "mobile_manipulator",
+ "_note": "Wheeled base fixed to the floor (placement samples the base pose).",
+ "urdf": {
+  "body": "assets/robots/mobile/galaxea_r1/r1_source.urdf"
+ },
+ "base": {
+  "type": "fixed",
+  "mount": "floor",
+  "height": 0.0,
+  "standoff": [
+   0.32,
+   0.55
+  ],
+  "lateral": [
+   -0.4,
+   0.4
+  ],
+  "yaw_tol_deg": 20,
+  "_standoff_note": "close in: from 0.45-0.75 m a reach across a 0.8 m table folds the torso into it; the wheeled base is ~0.3 m in radius"
+ },
+ "drives": [
+  {
+   "match": "^torso",
+   "kp": 20000.0,
+   "max_force": 20000.0
+  },
+  {
+   "match": "_arm_joint",
+   "kp": 4000.0,
+   "max_force": 2000.0
+  },
+  {
+   "match": "_gripper_axis",
+   "kp": 2000.0,
+   "max_force": 200.0
+  },
+  {
+   "match": ".",
+   "kp": 1000.0,
+   "max_force": 1000.0
+  }
+ ],
+ "home": {
+  "torso_joint1": 0.6,
+  "torso_joint2": -1.0,
+  "torso_joint3": -0.4,
+  "right_arm_joint2": 0.3,
+  "right_arm_joint3": -0.8,
+  "left_arm_joint2": 1.59,
+  "left_arm_joint3": -0.25,
+  "left_arm_joint1": -1.47,
+  "left_arm_joint4": 0.51,
+  "left_arm_joint5": -0.52,
+  "left_arm_joint6": 2.85
+ },
+ "arms": {
+  "right": {
+   "ik_joints": [
+    "torso_joint1",
+    "torso_joint2",
+    "torso_joint3",
+    "torso_joint4",
+    "right_arm_joint1",
+    "right_arm_joint2",
+    "right_arm_joint3",
+    "right_arm_joint4",
+    "right_arm_joint5",
+    "right_arm_joint6"
+   ],
+   "ik_weights": {
+    "^torso_": 0.2
+   },
+   "tcp_link": "right_arm_link6",
+   "tcp_offset": [
+    0,
+    0,
+    0.06
+   ],
+   "tcp_axes": {
+    "approach": "+z",
+    "closing": "+y"
+   },
+   "ee": {
+    "type": "parallel",
+    "joints": "^right_gripper_axis",
+    "close": {
+     "mode": "targets",
+     "open": {
+      "right_gripper_axis1": 0.05,
+      "right_gripper_axis2": 0.05
+     },
+     "closed": {
+      "right_gripper_axis1": 0.0,
+      "right_gripper_axis2": 0.0
+     }
+    },
+    "grasp": "antipodal",
+    "max_width": 0.1,
+    "collision": "convexDecomposition",
+    "_collision_note": "L-shaped fingers: their per-link convex hull wedges onto a cup's rim near the palm"
+   }
+  }
+ },
+ "cameras": [],
+ "_tcp": "finger pads end 0.073-0.078 m along +z of right_arm_link6 (URDF meshes): TCP mid-pad at 0.06 m",
+ "_home_note": "left (idle) arm folded beside the chest, searched for: on its own side, no lower than the shoulder line, not reaching forward -- hanging, it swept into a low table as the torso bent"
+}

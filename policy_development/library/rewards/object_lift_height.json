@@ -1,0 +1,12 @@
+{
+ "schema": "astra_reward_term_v1",
+ "id": "object_lift_height",
+ "phase": "lift",
+ "description": "Height of a labelled object's centroid above its start, clipped.",
+ "inputs": [
+  "cloud+labels"
+ ],
+ "formula": "clip(z(label) - z0(label), 0, h_target) / h_target",
+ "validated_on": [],
+ "cautions": "Point-cloud centroid includes the hand when grasped; use the label's points only."
+}

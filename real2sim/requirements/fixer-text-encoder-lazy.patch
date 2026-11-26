@@ -1,0 +1,23 @@
+--- a/imaginaire/auxiliary/text_encoder.py
++++ b/imaginaire/auxiliary/text_encoder.py
+@@ -32,7 +32,18 @@
+ from imaginaire.lazy_config import LazyCall as L
+ from imaginaire.lazy_config import instantiate as lazy_instantiate
+-from imaginaire.models.vlm_qwen import build_tokenizer
+-from imaginaire.models.vlm_qwen_omni import QwenVLBaseModel
+ from imaginaire.utils import log
++
++
++# Real2Worlds2Real, 2026-11-26: load optional Qwen components only when requested.
++def build_tokenizer(*args, **kwargs):
++    from imaginaire.models.vlm_qwen import build_tokenizer as implementation
++    return implementation(*args, **kwargs)
++
++
++class QwenVLBaseModel:
++    def __new__(cls, *args, **kwargs):
++        from imaginaire.models.vlm_qwen_omni import QwenVLBaseModel as implementation
++        return implementation(*args, **kwargs)
++
+
+ transformers.utils.logging.set_verbosity_error()

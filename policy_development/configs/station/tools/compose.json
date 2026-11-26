@@ -1,0 +1,88 @@
+{
+ "schema": "astra_station_tool_v1",
+ "id": "compose",
+ "family": "composition",
+ "cap_key": "compose",
+ "description": "Chain two candidates (policies or programs) by stage: stage_a acts until the switch condition holds for `hold` consecutive steps, then stage_b acts for the rest of the episode. switch = {kind: label_rise (label, rise_m) | palm_near_label (label, dist_m, offset[3]) | tactile (min_n) | step (n), hold}. E.g. a program grasps and lifts, then a learned policy places. Free; evaluate the result.",
+ "arguments": {
+  "type": "object",
+  "required": [
+   "name",
+   "stage_a",
+   "stage_b",
+   "switch"
+  ],
+  "additionalProperties": false,
+  "properties": {
+   "name": {
+    "type": "string",
+    "pattern": "[a-z][a-z0-9_]{1,40}"
+   },
+   "stage_a": {
+    "type": "string"
+   },
+   "stage_b": {
+    "type": "string"
+   },
+   "switch": {
+    "type": "object",
+    "required": [
+     "kind"
+    ],
+    "properties": {
+     "kind": {
+      "enum": [
+       "label_rise",
+       "palm_near_label",
+       "tactile",
+       "step"
+      ]
+     },
+     "label": {
+      "type": "string"
+     },
+     "rise_m": {
+      "type": "number"
+     },
+     "dist_m": {
+      "type": "number"
+     },
+     "offset": {
+      "type": "array"
+     },
+     "min_n": {
+      "type": "number"
+     },
+     "n": {
+      "type": "integer"
+     },
+     "hold": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 40
+     }
+    }
+   }
+  }
+ },
+ "costs": {
+  "all": "none (evaluate it afterwards)"
+ },
+ "adapter": {
+  "argv": [
+   "/usr/bin/python3",
+   "{repo}/policy_development/tools/compose.py",
+   "--binding",
+   "{binding}",
+   "--request",
+   "{request}",
+   "--result",
+   "{result}"
+  ],
+  "timeout_seconds": 600
+ },
+ "status": "ready",
+ "interfaces": [
+  "cloud_q29"
+ ]
+}

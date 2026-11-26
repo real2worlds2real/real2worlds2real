@@ -1,0 +1,54 @@
+{
+ "schema": "astra_station_tool_v1",
+ "id": "record_demos",
+ "family": "data",
+ "description": "Run a candidate (program, learned policy or teacher) on fresh training starts and keep its successful episodes as a dataset (same format as the real demonstrations, so it can be mixed with them). Stops at n_success successes or max_episodes episodes.",
+ "arguments": {
+  "type": "object",
+  "required": [
+   "name",
+   "source",
+   "n_success"
+  ],
+  "additionalProperties": false,
+  "properties": {
+   "name": {
+    "type": "string",
+    "pattern": "[a-z][a-z0-9_]{1,40}"
+   },
+   "source": {
+    "type": "string"
+   },
+   "n_success": {
+    "type": "integer",
+    "minimum": 10,
+    "maximum": 800
+   },
+   "max_episodes": {
+    "type": "integer",
+    "minimum": 10,
+    "maximum": 2000
+   }
+  }
+ },
+ "costs": {
+  "all": "every finished episode counts as a training episode"
+ },
+ "adapter": {
+  "argv": [
+   "/usr/bin/python3",
+   "{repo}/policy_development/tools/record_demos.py",
+   "--binding",
+   "{binding}",
+   "--request",
+   "{request}",
+   "--result",
+   "{result}"
+  ],
+  "timeout_seconds": 43200
+ },
+ "status": "ready",
+ "interfaces": [
+  "cloud_q29"
+ ]
+}

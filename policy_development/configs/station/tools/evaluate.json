@@ -1,0 +1,48 @@
+{
+ "schema": "astra_station_tool_v1",
+ "id": "evaluate",
+ "family": "evaluation",
+ "description": "Evaluate one candidate. starts=dev: the 15 open development starts (same starts for every candidate, so results pair up; counts one development evaluation). starts=train: N fresh random training starts (counts N training episodes). Returns success, termination reasons, per-start outcomes and diagnostics (per object: lifted / moved; touched; episode length) split by success and failure. On training starts a program also gets real_time: its per-step compute estimated for the real-robot station worker (CPU fk / ik, ~1.5 ms per ik point; budget ~100 ms per step). A program with steps over budget stalls or is stopped on the robot (11-13: a place program solving ik for a whole path in one step).",
+ "arguments": {
+  "type": "object",
+  "required": [
+   "candidate",
+   "starts"
+  ],
+  "additionalProperties": false,
+  "properties": {
+   "candidate": {
+    "type": "string"
+   },
+   "starts": {
+    "enum": [
+     "dev",
+     "train"
+    ]
+   },
+   "episodes": {
+    "type": "integer",
+    "minimum": 16,
+    "maximum": 128
+   }
+  }
+ },
+ "costs": {
+  "dev": "1 development evaluation, ~10-25 min",
+  "train": "N training episodes, ~1 min per 16 episodes per 100 steps"
+ },
+ "adapter": {
+  "argv": [
+   "/usr/bin/python3",
+   "{repo}/policy_development/tools/evaluate.py",
+   "--binding",
+   "{binding}",
+   "--request",
+   "{request}",
+   "--result",
+   "{result}"
+  ],
+  "timeout_seconds": 21600
+ },
+ "status": "ready"
+}

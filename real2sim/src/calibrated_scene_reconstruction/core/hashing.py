@@ -1,0 +1,6 @@
+"""Content hashing shared by evidence producers across domains."""
+import hashlib
+from pathlib import Path
+
+def sha(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()

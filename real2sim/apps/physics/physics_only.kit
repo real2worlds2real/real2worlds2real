@@ -1,0 +1,20 @@
+[package]
+title = "Physics worker"
+version = "1.0.0"
+
+[dependencies]
+"omni.usd" = {}
+"omni.physx" = {}
+"omni.kit.usd.layers" = {}
+"isaacsim.core.version" = {}
+
+[settings.app]
+name = "Isaac Physics"
+version = "5.1.0"
+window.enabled = false
+renderer.enabled = false
+vulkan = false
+settings.persistent = false
+
+[settings.app.exts.folders]
+'++' = ["${exe-path}/../exts", "${exe-path}/../extscache", "${exe-path}/../extsDeprecated"]

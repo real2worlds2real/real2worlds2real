@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "operation": "prepare",
+  "source_ply": "/path/to/captured-gaussians.ply",
+  "frame": {
+    "source_to_scene": [[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]],
+    "scale_source": "Replace with the actual capture-frame alignment evidence or explicitly state an estimate",
+    "scale_verified": false
+  },
+  "crop": {
+    "sigma_extent": 3,
+    "min_opacity": 0.005,
+    "exclude_boxes": [{
+      "size_m": [1.2,0.8,0.8],
+      "transform": [[1,0,0,0],[0,1,0,0],[0,0,1,1.2],[0,0,0,1]]
+    }]
+  }
+}

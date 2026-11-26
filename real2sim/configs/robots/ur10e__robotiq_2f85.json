@@ -1,0 +1,82 @@
+{
+ "name": "ur10e__robotiq_2f85",
+ "kind": "arm",
+ "urdf": {
+  "body": "assets/robots/arms/ur/ur10e.urdf",
+  "ee": "assets/robots/grippers/robotiq_2f85/urdf/robots/robotiq_arg85_description.urdf",
+  "flange": "tool0",
+  "prefix": "ee_"
+ },
+ "base": {
+  "type": "fixed",
+  "mount": "pedestal",
+  "height": "support",
+  "standoff": [
+   0.45,
+   0.8
+  ],
+  "lateral": [
+   -0.25,
+   0.25
+  ],
+  "yaw_tol_deg": 15
+ },
+ "drives": [
+  {
+   "match": "_joint$",
+   "kp": 4000.0,
+   "max_force": 2000.0
+  },
+  {
+   "match": "^ee_",
+   "kp": 400.0,
+   "max_force": 200.0
+  }
+ ],
+ "home": {
+  "shoulder_pan_joint": 0.0,
+  "shoulder_lift_joint": -1.571,
+  "elbow_joint": 1.571,
+  "wrist_1_joint": -1.571,
+  "wrist_2_joint": -1.571,
+  "wrist_3_joint": 0.0
+ },
+ "arms": {
+  "right": {
+   "ik_joints": [
+    "shoulder_pan_joint",
+    "shoulder_lift_joint",
+    "elbow_joint",
+    "wrist_1_joint",
+    "wrist_2_joint",
+    "wrist_3_joint"
+   ],
+   "tcp_link": "ee_robotiq_85_base_link",
+   "tcp_offset": [
+    0,
+    0,
+    0.145
+   ],
+   "tcp_axes": {
+    "approach": "+z",
+    "closing": "+x"
+   },
+   "ee": {
+    "type": "parallel",
+    "joints": "^ee_finger_joint$",
+    "max_width": 0.085,
+    "close": {
+     "mode": "targets",
+     "open": {
+      "ee_finger_joint": 0.0
+     },
+     "closed": {
+      "ee_finger_joint": 0.72
+     }
+    },
+    "grasp": "antipodal"
+   }
+  }
+ },
+ "cameras": []
+}

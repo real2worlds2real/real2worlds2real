@@ -1,0 +1,56 @@
+{
+ "schema": "astra_station_tool_v1",
+ "id": "synthesize_program",
+ "family": "program",
+ "cap_key": "synthesize_program",
+ "description": "Code as policy: a confined agent session (same agent family as you, ASPIRE fix-loop discipline) writes and iterates a controller program for this task from the task documents, the real demonstrations and the experience selected for this task, guided by your `brief` (what to build, what to borrow, what to avoid). It runs its numbered versions on the development starts (each version = one development evaluation of the campaign) and returns its best version as a candidate with that evaluation. Use it for a scripted solution, a teacher for record_demos, or a stage of a composition. start_from: an earlier program candidate to improve.",
+ "arguments": {
+  "type": "object",
+  "required": [
+   "name",
+   "brief"
+  ],
+  "additionalProperties": false,
+  "properties": {
+   "name": {
+    "type": "string",
+    "pattern": "[a-z][a-z0-9_]{1,40}"
+   },
+   "brief": {
+    "type": "string",
+    "minLength": 40,
+    "maxLength": 6000
+   },
+   "versions": {
+    "type": "integer",
+    "minimum": 2,
+    "maximum": 9
+   },
+   "start_from": {
+    "type": "string"
+   },
+   "hours": {
+    "type": "number",
+    "minimum": 0.5,
+    "maximum": 6
+   }
+  }
+ },
+ "costs": {
+  "all": "one session (hours, default 3); each numbered version = 1 development evaluation; no training episodes"
+ },
+ "adapter": {
+  "argv": [
+   "/usr/bin/python3",
+   "{repo}/policy_development/tools/synthesize_program.py",
+   "--binding",
+   "{binding}",
+   "--request",
+   "{request}",
+   "--result",
+   "{result}"
+  ],
+  "timeout_seconds": 18000
+ },
+ "status": "ready"
+}

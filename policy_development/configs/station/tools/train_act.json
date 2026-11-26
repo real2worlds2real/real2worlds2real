@@ -1,0 +1,88 @@
+{
+ "schema": "astra_station_tool_v1",
+ "id": "train_act",
+ "family": "imitation",
+ "cap_key": "train_act",
+ "description": "Train the laboratory's point-cloud ACT (CVAE transformer, PointNeXt encoder, action chunk 32, delta-to-measured targets) on one or more datasets, each with a repeat weight (e.g. real x3 + recorded sim). Holds out dev_fraction of each dataset's episodes for the loss; creates two candidates <name>_best (lowest held-out loss) and <name>_last (final epoch). mask_hand feeds the hand joints as zero (recommended for the real robot). pad_hold appends hold frames to every episode.",
+ "arguments": {
+  "type": "object",
+  "required": [
+   "name",
+   "datasets"
+  ],
+  "additionalProperties": false,
+  "properties": {
+   "name": {
+    "type": "string",
+    "pattern": "[a-z][a-z0-9_]{1,40}"
+   },
+   "datasets": {
+    "type": "array",
+    "minItems": 1,
+    "maxItems": 6,
+    "items": {
+     "type": "object",
+     "required": [
+      "name"
+     ],
+     "additionalProperties": false,
+     "properties": {
+      "name": {
+       "type": "string"
+      },
+      "repeat": {
+       "type": "integer",
+       "minimum": 1,
+       "maximum": 5
+      }
+     }
+    }
+   },
+   "epochs": {
+    "type": "integer",
+    "minimum": 50,
+    "maximum": 400
+   },
+   "seed": {
+    "type": "integer"
+   },
+   "mask_hand": {
+    "type": "boolean"
+   },
+   "pad_hold": {
+    "type": "integer",
+    "minimum": 0,
+    "maximum": 80
+   },
+   "dev_fraction": {
+    "type": "number",
+    "minimum": 0.0,
+    "maximum": 0.3
+   }
+  }
+ },
+ "costs": {
+  "all": "~0.5 GPU hour per 400 epochs on ~100 episodes; counts one ACT training"
+ },
+ "requires_compute": [
+  "act_train",
+  "act_runtime"
+ ],
+ "adapter": {
+  "argv": [
+   "/usr/bin/python3",
+   "{repo}/policy_development/tools/train_act.py",
+   "--binding",
+   "{binding}",
+   "--request",
+   "{request}",
+   "--result",
+   "{result}"
+  ],
+  "timeout_seconds": 36000
+ },
+ "status": "ready",
+ "interfaces": [
+  "cloud_q29"
+ ]
+}

@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "capabilities": ["physx", "usd_mesh", "rigid", "articulated", "rigid_support_response", "scene_video", "configurable_timestep"],
+  "argv": ["/path/to/simulator-python", "/path/to/real2sim/scripts/isaac_lab_scene_adapter.py",
+           "--scene", "{scene}", "--output", "{output}", "--manifest", "{manifest}",
+           "--review-request", "{review_request}", "--steps", "960", "--resolution", "640",
+           "--viz", "none", "--device", "cuda:0"]
+}

@@ -1,0 +1,7 @@
+# Runtime qualification compares exact source bytes. Do not rewrite line ends
+# during add/checkout; a fresh clone must preserve the validated fingerprints.
+* -text
+# Some retained historical evidence uses CRLF; preserve its exact qualified bytes.
+* whitespace=trailing-space,space-before-tab,cr-at-eol
+# Preserve the already-qualified scene source's existing final blank line.
+peg_scene.py whitespace=-blank-at-eof

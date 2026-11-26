@@ -1,0 +1,68 @@
+{
+ "schema": "astra_station_tool_v1",
+ "id": "research_session",
+ "family": "rl",
+ "cap_key": "research_session",
+ "description": "Auto-research session (ENPIRE contract): a confined agent session with its own station and sandbox writes and runs its own training scripts - reinforcement learning on the station with reward terms from the library, learning from the demonstrations, fine-tuning or post-training the candidates you hand it, or code as policy - evaluates its deliverables on the development starts and freezes its best. Guided by your `brief`. Its evaluations count as development evaluations and its finished training episodes as training episodes of the campaign (caps: evaluations, train_episodes).",
+ "arguments": {
+  "type": "object",
+  "required": [
+   "name",
+   "brief"
+  ],
+  "additionalProperties": false,
+  "properties": {
+   "name": {
+    "type": "string",
+    "pattern": "[a-z][a-z0-9_]{1,40}"
+   },
+   "brief": {
+    "type": "string",
+    "minLength": 40,
+    "maxLength": 6000
+   },
+   "candidates": {
+    "type": "array",
+    "items": {
+     "type": "string"
+    },
+    "maxItems": 4
+   },
+   "train_episodes": {
+    "type": "integer",
+    "minimum": 0,
+    "maximum": 2000
+   },
+   "evaluations": {
+    "type": "integer",
+    "minimum": 1,
+    "maximum": 10
+   },
+   "hours": {
+    "type": "number",
+    "minimum": 0.5,
+    "maximum": 8
+   }
+  }
+ },
+ "costs": {
+  "all": "one session (hours, default 4); its evaluations and training episodes are charged to the campaign"
+ },
+ "adapter": {
+  "argv": [
+   "/usr/bin/python3",
+   "{repo}/policy_development/tools/research_session.py",
+   "--binding",
+   "{binding}",
+   "--request",
+   "{request}",
+   "--result",
+   "{result}"
+  ],
+  "timeout_seconds": 32400
+ },
+ "status": "ready",
+ "requires_files": [
+  "{station_root}/third_party/ENPIRE/enpire/policy/autoresearch_instruction.md"
+ ]
+}

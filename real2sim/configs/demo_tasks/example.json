@@ -1,0 +1,14 @@
+{
+ "_note": "Augmentation and success settings for demo re-targeting. Copy this file to <task>.json and replace the object names with those of your scene graph. Every key is optional; calibrated_scene_reconstruction.datagen.demo.sampler.DEFAULT lists them all.",
+ "task": "put the mug on the tray",
+ "objects": {"mug": {"xy": [0.08, 0.08], "yaw_deg": 180}, "tray": {"xy": [0.05, 0.05], "yaw_deg": 20}},
+ "augment_target": 0.5,
+ "distractors": [0, 3],
+ "scenes": {"twin": 1.0, "cousins": 3.0},
+ "light": {"scale": [0.7, 1.3], "temp": [3500, 6500]},
+ "camera": {"pos": 0.02, "rot_deg": 2.0},
+ "base": {"xy": [0.05, 0.05], "yaw_deg": 8.0},
+ "success": {"pos_tol": 0.03, "rot": "upright", "rot_tol_deg": 15.0},
+ "grasp": {"type": "auto", "radius": 0.03, "inhand_pos_tol": 0.02, "inhand_rot_tol_deg": 25.0},
+ "skills": {"1": {"type": "transport"}}
+}

@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "capabilities": ["physx", "usd_mesh", "rigid", "articulated", "deformable", "physx_particle_cloth", "rigid_deformable_contact", "static_environment_collision", "rigid_support_response", "scene_video", "configurable_timestep", "nurec_volume", "calibrated_camera"],
+  "argv": ["/path/to/real2sim/scripts/run_isaac_sim51.sh",
+           "/workspace/real2sim_harness/scripts/isaac_lab_scene_adapter.py",
+           "--scene", "{scene}", "--output", "{output}", "--manifest", "{manifest}",
+           "--review-request", "{review_request}", "--steps", "960", "--resolution", "640",
+           "--viz", "none", "--device", "cuda:0"]
+}

@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "read_paths": ["/path/to/model-environment", "/path/to/local-sam3"],
+  "argv": ["/path/to/model-environment/bin/python", "/path/to/real2sim/scripts/segment_reference_views.py",
+           "--weights", "/path/to/local-sam3", "--device", "cuda",
+           "--request", "{request}", "--output", "{output}"]
+}

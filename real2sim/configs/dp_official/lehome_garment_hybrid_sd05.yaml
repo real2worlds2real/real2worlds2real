@@ -1,0 +1,13 @@
+# Diffusion Policy training configuration for the LeHome garment task.
+defaults:
+  - lehome_garment_hybrid
+  - _self_
+
+task:
+  shape_meta:
+    obs:
+      robot_qpos:
+        shape: [12]
+        type: low_dim
+  dataset:
+    low_dim_dropout: 0.5

@@ -1,0 +1,31 @@
+{
+ "dataset": "outputs/lerobot/pick_place",
+ "out": "outputs/policy/pick_place/diffusion",
+ "cameras": null,
+ "image_size": [
+  240,
+  384
+ ],
+ "crop_shape": [
+  216,
+  344
+ ],
+ "held_out_tags": [],
+ "only_success": true,
+ "n_obs_steps": 2,
+ "horizon": 16,
+ "n_action_steps": 8,
+ "noise_scheduler": "DDIM",
+ "num_inference_steps": 10,
+ "vision_backbone": "resnet18",
+ "batch_size": 64,
+ "lr": 0.0001,
+ "weight_decay": 1e-06,
+ "grad_clip": 10.0,
+ "steps": 100000,
+ "log_every": 100,
+ "save_every": 10000,
+ "num_workers": 4,
+ "video_backend": "pyav",
+ "device": "cuda"
+}

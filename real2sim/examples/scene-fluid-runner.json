@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "capabilities": ["newton", "fluid", "usd_mesh", "static_environment_collision", "scene_video"],
+  "argv": ["/path/to/host-python", "/path/to/real2sim/scripts/fluid_scene_adapter.py",
+           "--physics-runner", "/path/to/mpm-physics-runner.json", "--blender", "/path/to/blender",
+           "--scene", "{scene}", "--output", "{output}", "--manifest", "{manifest}",
+           "--review-request", "{review_request}"]
+}

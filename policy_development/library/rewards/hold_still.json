@@ -1,0 +1,12 @@
+{
+ "schema": "astra_reward_term_v1",
+ "id": "hold_still",
+ "phase": "hold",
+ "description": "Penalty on arm joint speed once the goal predicate holds.",
+ "inputs": [
+  "q29"
+ ],
+ "formula": "-|dq_arm| while the goal condition holds",
+ "validated_on": [],
+ "cautions": "Unvalidated as a reward; the padding route is validated (hold_at_goal_pad)."
+}

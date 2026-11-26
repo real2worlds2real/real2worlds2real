@@ -1,0 +1,82 @@
+{
+ "name": "lab_tech",
+ "rooms": [
+  "lab",
+  "workshop"
+ ],
+ "prompt": "engineering lab, grey and black workbenches, epoxy floor, aluminium extrusion frames, cool light",
+ "support": [
+  "proc_laminate_black",
+  "proc_laminate_grey",
+  "proc_laminate_white"
+ ],
+ "floor": [
+  "proc_epoxy_grey",
+  "proc_vinyl_grey",
+  "proc_carpet_tile_charcoal"
+ ],
+ "wall_tint": {
+  "light_grey": [
+   0.9,
+   0.91,
+   0.93
+  ],
+  "blue_grey": [
+   0.82,
+   0.88,
+   0.98
+  ]
+ },
+ "wall_pbr": [
+  "proc_painted_drywall",
+  "plastered_wall"
+ ],
+ "paint": {
+  "white": [
+   1.25,
+   1.22,
+   1.15
+  ],
+  "light_grey": [
+   0.9,
+   0.9,
+   0.92
+  ],
+  "charcoal": [
+   0.45,
+   0.45,
+   0.47
+  ]
+ },
+ "stain": {
+  "natural": [
+   1,
+   1,
+   1
+  ],
+  "white_wash": [
+   1.3,
+   1.28,
+   1.22
+  ]
+ },
+ "ceiling_tint": [
+  1.0,
+  1.0,
+  1.0
+ ],
+ "hdri": [
+  "canary_wharf",
+  "je_gray_02"
+ ],
+ "light": {
+  "temp": [
+   5400,
+   6500
+  ],
+  "scale": [
+   0.85,
+   1.15
+  ]
+ }
+}

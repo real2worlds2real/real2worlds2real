@@ -1,0 +1,101 @@
+{
+ "schema": "astra_station_tool_v1",
+ "id": "train_residual",
+ "family": "rl",
+ "cap_key": "train_residual",
+ "description": "Residual RL post-training (lab ResFiT recipe) of a frozen base candidate (policy or program) on the station's training starts: a small actor adds a bounded, incremental correction - palm xy / xyz offset (through the identified arm model's IK, base orientation kept) or arm-joint offset - on top of the base's action; the current offset is part of its state. TD3; each step pays offset_reg (default 0.5) * mean((offset/scale)^2), and the actor waits until the critic has seen one round of finished episodes. Reward = terms you choose, each {id, weight, params}: a lab term (LAB REWARD TERMS), or id=expression with params.expr = a reward from the work library (or your own) transcribed over station features, params.source = its work-library id; success_sparse weight = success bonus (default 10). Creates up to four candidates <name>_at<episodes>. Lab evidence: works for precision placement after a base that already grasps; cannot repair missed grasps. Station evidence (cup_lift 11-12): a gripper-centred shaping term (palm to object centre, Text2Reward LiftCube) drove the palm into the cup with a dexterous hand; prefer success / lift / hold terms unless the reference point fits this hand's grasp.",
+ "arguments": {
+  "type": "object",
+  "required": [
+   "name",
+   "base",
+   "action_space",
+   "reward_terms",
+   "episodes"
+  ],
+  "additionalProperties": false,
+  "properties": {
+   "name": {
+    "type": "string",
+    "pattern": "[a-z][a-z0-9_]{1,40}"
+   },
+   "base": {
+    "type": "string"
+   },
+   "action_space": {
+    "enum": [
+     "palm_xy",
+     "palm_xyz",
+     "arm_joints"
+    ]
+   },
+   "scale": {
+    "type": "number",
+    "minimum": 0.002,
+    "maximum": 0.1
+   },
+   "reward_terms": {
+    "type": "array",
+    "minItems": 1,
+    "items": {
+     "type": "object",
+     "required": [
+      "id"
+     ],
+     "additionalProperties": false,
+     "properties": {
+      "id": {
+       "type": "string"
+      },
+      "weight": {
+       "type": "number"
+      },
+      "params": {
+       "type": "object"
+      }
+     }
+    }
+   },
+   "episodes": {
+    "type": "integer",
+    "minimum": 64,
+    "maximum": 1200
+   },
+   "sigma": {
+    "type": "number",
+    "minimum": 0.02,
+    "maximum": 0.5
+   },
+   "step_frac": {
+    "type": "number",
+    "minimum": 0.02,
+    "maximum": 0.5
+   },
+   "offset_reg": {
+    "type": "number",
+    "minimum": 0,
+    "maximum": 5
+   }
+  }
+ },
+ "costs": {
+  "all": "its episodes as training episodes; ~1-2 s per station step for 16 envs"
+ },
+ "adapter": {
+  "argv": [
+   "/usr/bin/python3",
+   "{repo}/policy_development/tools/train_residual.py",
+   "--binding",
+   "{binding}",
+   "--request",
+   "{request}",
+   "--result",
+   "{result}"
+  ],
+  "timeout_seconds": 50400
+ },
+ "status": "ready",
+ "interfaces": [
+  "cloud_q29"
+ ]
+}

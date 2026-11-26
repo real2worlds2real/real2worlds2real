@@ -1,0 +1,12 @@
+{
+ "schema": "astra_reward_term_v1",
+ "id": "grasp_contact",
+ "phase": "grasp",
+ "description": "Reward fingertip contact force within a band (touching, not squeezing).",
+ "inputs": [
+  "tactile_n"
+ ],
+ "formula": "+1 if 2 N <= max(tactile) <= 25 N",
+ "validated_on": [],
+ "cautions": "Squeezing above ~30 N trips the real guard; cap it."
+}

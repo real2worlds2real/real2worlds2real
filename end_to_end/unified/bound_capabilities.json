@@ -1,0 +1,63 @@
+{
+  "schema": "astra_bound_capabilities_v1",
+  "capabilities": [
+    {
+      "id": "dense_vector_behavior_cloning_v1",
+      "status": "implemented_requires_current_world_and_data_qualification",
+      "operations": [
+        "train"
+      ],
+      "methods": [
+        "ridge_bc",
+        "mlp_bc"
+      ],
+      "implementation": "bound_training.py",
+      "documentation": "BOUND_TRAINING.md",
+      "launcher": [
+        "python",
+        "-m",
+        "policy_development",
+        "bound-train"
+      ],
+      "command_arguments": [
+        "--binding",
+        "{binding}",
+        "--request",
+        "{request}",
+        "--result",
+        "{result}"
+      ],
+      "pythonpath": "The current repository src directory must be set explicitly.",
+      "dataset_format": "astra_dense_bc_v1",
+      "requirements": [
+        "A current accepted native twin and immutable world binding",
+        "A current accepted data module under the same task, world and policy I/O",
+        "An owned running train attempt that pins the request and data dependencies",
+        "Finite floating point vector observations and per-step expert command actions",
+        "Explicit ordered observation/action fields and contracted timestamp alignment",
+        "Every manifest and episode file hash must belong to current accepted data evidence"
+      ],
+      "training_semantics": {
+        "fit_split": "train",
+        "observation_transform": "train_mean_std_floor_1e-6",
+        "action_transform": "identity_in_declared_units",
+        "privileged_state": "Not assumed; declared I/O availability must be independently reviewed",
+        "task_specific_features": false,
+        "outputs": [
+          "policy.npz",
+          "policy_io.json",
+          "training_metrics.json",
+          "receipt.json",
+          "result.json"
+        ]
+      },
+      "unsupported": [
+        "RGB/image encoders",
+        "Action chunks or sequence policies",
+        "ACT or Diffusion Policy architecture",
+        "Demonstration generation or expert qualification",
+        "Closed-loop evaluation or real-robot execution"
+      ]
+    }
+  ]
+}

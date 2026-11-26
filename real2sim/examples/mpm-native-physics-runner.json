@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "capabilities": ["mpm", "finite_static_boxes"],
+  "argv": [
+    "/path/to/python-with-numpy-and-scipy",
+    "/path/to/real2sim/scripts/simulate_particle_materials_native.py",
+    "{configuration}", "--output", "{output}",
+    "--frames", "{frames}", "--fps", "{fps}",
+    "--native-runtime", "/path/to/isolated-newton-1.7-packages",
+    "--device", "cuda:0"
+  ]
+}

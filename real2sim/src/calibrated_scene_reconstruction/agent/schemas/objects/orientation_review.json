@@ -1,0 +1,30 @@
+{
+  "name": "orientation_review",
+  "input": {
+    "type": "object",
+    "properties": {
+      "session": {"type": "string", "minLength": 1},
+      "object": {"type": "string", "pattern": "^[A-Za-z0-9_-]+$"},
+      "link": {"type": "string", "pattern": "^[A-Za-z0-9_]+$"},
+      "candidate": {"type": "string", "minLength": 1},
+      "pivot": {"type": "array", "items": {"type": "number"}, "minItems": 3, "maxItems": 3},
+      "axis": {"type": "array", "items": {"type": "number"}, "minItems": 3, "maxItems": 3},
+      "angles_deg": {"type": "array", "items": {"type": "number", "minimum": -360, "maximum": 360}, "minItems": 1, "maxItems": 48}
+    },
+    "required": ["session", "object", "link", "candidate", "pivot", "axis", "angles_deg"],
+    "additionalProperties": false
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "ok": {"const": true},
+      "proposal_only": {"const": true},
+      "task_approved": {"const": false},
+      "physical_validity_checked": {"const": false},
+      "requires_agent_rebuild": {"const": true},
+      "evidence_images": {"type": "array", "items": {"type": "string"}}
+    },
+    "required": ["ok", "proposal_only", "task_approved", "physical_validity_checked", "requires_agent_rebuild", "evidence_images"],
+    "additionalProperties": true
+  }
+}

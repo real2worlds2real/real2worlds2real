@@ -1,0 +1,66 @@
+{
+  "name": "blender_run",
+  "input": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+      "session": {
+        "type": "string",
+        "minLength": 1
+      },
+      "object": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9_-]+$"
+      },
+      "params": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "number"
+        }
+      },
+      "timeout": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 600
+      }
+    },
+    "required": [
+      "session",
+      "object"
+    ],
+    "additionalProperties": false
+  },
+  "output": {
+    "type": "object",
+    "required": [
+      "ok",
+      "evidence_images"
+    ],
+    "properties": {
+      "ok": {
+        "type": "boolean"
+      },
+      "evidence_images": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Evidence paths relative to the repository root (absolute for outputs outside it)"
+      },
+      "geometry": {
+        "type": "object",
+        "description": "Watertightness, winding, solid volume and extents in metres"
+      },
+      "artifact_dir": {
+        "type": "string"
+      },
+      "opening": {
+        "type": [
+          "object",
+          "null"
+        ]
+      }
+    },
+    "additionalProperties": true
+  }
+}

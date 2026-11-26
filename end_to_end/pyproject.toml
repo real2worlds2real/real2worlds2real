@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+license = "MIT"
+license-files = ["LICENSE"]
+name = "astra-e2e"
+version = "0.1.0"
+description = "The end-to-end layer: video to simulation (real2sim), policy development in simulation, preparation for the real robot; oversight, unified agent tools and the chain that joins the two parts."
+requires-python = ">=3.11,<3.13"
+dependencies = ["astra-station~=0.1.0", "real2sim-harness~=0.2.0", "jsonschema>=4.23,<5"]
+
+[project.scripts]
+astra-e2e = "astra_e2e.chain:main"
+
+[project.optional-dependencies]
+dev = ["numpy"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 120

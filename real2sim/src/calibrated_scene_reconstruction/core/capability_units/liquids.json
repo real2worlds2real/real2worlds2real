@@ -1,0 +1,67 @@
+{
+  "mechanism_fields": {
+    "continuum_components": true
+  },
+  "mechanism_validators": {
+    "liquids": "calibrated_scene_reconstruction.assets.continuum_components:validate"
+  },
+  "mechanism_results": {
+    "liquids": "calibrated_scene_reconstruction.assets.continuum_components:result_failures"
+  },
+  "task_objects": {
+    "liquids": "calibrated_scene_reconstruction.assets.liquid_capability:extra_objects"
+  },
+  "prior_groups": {
+    "continuum_components": true
+  },
+  "physical_units": {
+    "dynamic_viscosity": "Pa*s",
+    "surface_tension": "N/m"
+  },
+  "prior_validators": {
+    "liquids": "calibrated_scene_reconstruction.assets.liquid_capability:priors"
+  },
+  "prior_scope": {
+    "liquids": "calibrated_scene_reconstruction.assets.liquid_capability:probe"
+  },
+  "prior_receipts": {
+    "liquids": "calibrated_scene_reconstruction.assets.liquid_capability:receipt"
+  },
+  "inventory_route": {
+    "continuum": "calibrated_scene_reconstruction.assets.liquid_inventory:route"
+  },
+  "inventory_components": {
+    "liquids": "calibrated_scene_reconstruction.assets.liquid_inventory:contents"
+  },
+  "candidate_fields": {
+    "fluid_candidate": true
+  },
+  "candidate_composition": {
+    "liquids": "calibrated_scene_reconstruction.apps.reconstruction.liquid_candidate:compose"
+  },
+  "fingerprint": {
+    "continuum_acceptance_engine": "assets/continuum_components.py",
+    "assets/liquid_capability.py": "assets/liquid_capability.py",
+    "assets/liquid_inventory.py": "assets/liquid_inventory.py"
+  },
+  "compatibility": {
+    "calibrated_scene_reconstruction.tasks.wetting": "calibrated_scene_reconstruction.assets.wetting",
+    "calibrated_scene_reconstruction.tasks.wet_contact": "calibrated_scene_reconstruction.assets.wet_contact"
+  },
+  "render_options": {
+    "--initialize-fluid-surfaces": {
+      "action": "store_true",
+      "help": "Explicit diagnostic: one native fluid timestep to initialize render surfaces; bound particle movement and freeze thereafter"
+    }
+  },
+  "render_prepare": {
+    "liquids": "calibrated_scene_reconstruction.sim.liquid_review:prepare"
+  },
+  "render_fingerprint": {
+    "liquids": "src/calibrated_scene_reconstruction/sim/fluid_reference.py",
+    "liquids_review": "src/calibrated_scene_reconstruction/sim/liquid_review.py"
+  },
+  "probe_disclosure": {
+    "liquids": "calibrated_scene_reconstruction.assets.liquid_capability:disclose"
+  }
+}

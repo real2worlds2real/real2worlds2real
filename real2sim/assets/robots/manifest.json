@@ -1,0 +1,504 @@
+[
+ {
+  "name": "hands/sharpa_wave_01",
+  "upstream": "Sharpa sharpa-urdf-usd-xml/wave_01 (HB1 fingertips)",
+  "license": "Apache-2.0",
+  "note": "Left and right HB1 Wave 01 URDFs and meshes. Local URDF edits make mesh paths relative. Historical HA4 and BODex-specific derivatives require separate permission.",
+  "size_mb": 23.3,
+  "formats": "URDF",
+  "distribution": "included",
+  "notices": [
+   "LICENSE.txt",
+   "NOTICE.txt",
+   "ATTRIBUTION.md"
+  ],
+  "source_urls": [
+   "https://github.com/sharpa-robotics/sharpa-urdf-usd-xml/tree/d2db0b8ba4aeb737e6274d4c4386e210eedfa1da/wave_01"
+  ]
+ },
+ {
+  "name": "hands/sharpa_wave_ha4_v2_1",
+  "upstream": "Sharpa Wave HA4 v2.1 vendor package (via OHRA)",
+  "license": "Not verified for the complete external package",
+  "note": "HA4 package metadata and the manufacturer-level license identify different terms. Verify the exact package with Sharpa.",
+  "size_mb": 0,
+  "formats": "URDF, MJCF, USD",
+  "distribution": "external",
+  "source_urls": [
+   "https://github.com/sharpa-robotics/sharpa-urdf-usd-xml"
+  ]
+ },
+ {
+  "name": "hands/sharpa_ha4_v5_0808",
+  "upstream": "Sharpa HA4 version5-0808 ROS packages",
+  "license": "Not verified for the complete external package",
+  "note": "HA4 package metadata and the manufacturer-level license identify different terms. Verify the exact package with Sharpa.",
+  "size_mb": 0,
+  "formats": "URDF, MJCF",
+  "distribution": "external",
+  "source_urls": [
+   "https://github.com/sharpa-robotics/sharpa-urdf-usd-xml"
+  ]
+ },
+ {
+  "name": "hands/wuji_hand",
+  "upstream": "Wuji Technology / wuji-hand-description",
+  "license": "MIT",
+  "note": "First-generation Wuji Hand. The original package.xml names MIT. The manufacturer supplies the copyright and full text in release v0.2.4.",
+  "size_mb": 37.4,
+  "formats": "URDF, MJCF, USD",
+  "distribution": "included",
+  "notices": [
+   "LICENSE"
+  ],
+  "source_urls": [
+   "https://github.com/wuji-technology/wuji-hand-description/tree/8702b967d69fb6ea2d98797946e18a7ef6634a22",
+   "https://github.com/wuji-technology/wuji-hand-description/blob/986c433/LICENSE"
+  ]
+ },
+ {
+  "name": "hands/wuji_hand2_beta1",
+  "upstream": "wuji-technology/wuji-description hand2/hand2_beta1",
+  "license": "Not verified for the complete external package",
+  "note": "Operator-supplied model. Confirm the terms of the exact files obtained from the listed source.",
+  "size_mb": 0,
+  "formats": "URDF, USD",
+  "distribution": "external"
+ },
+ {
+  "name": "hands/wuji_hand2_beta2",
+  "upstream": "wuji-technology/wuji-description v2026.9.11 @c2cd7f8 hand2/hand2_beta2",
+  "license": "MIT",
+  "note": "Wuji Hand 2 Beta 2. Upstream files and revision are recorded in provenance.json.",
+  "size_mb": 64.6,
+  "formats": "URDF, MJCF, USD",
+  "distribution": "included",
+  "notices": [
+   "LICENSE"
+  ],
+  "source_urls": [
+   "https://github.com/wuji-technology/wuji-description/tree/c2cd7f8d1ef8b6dc8cb907c17daa5a88b4442d95/hand2/hand2_beta2"
+  ]
+ },
+ {
+  "name": "hands/allegro",
+  "upstream": "Wonik Allegro (via OHRA)",
+  "license": "Not verified for the complete external package",
+  "note": "Operator-supplied model. Confirm the terms of the exact files obtained from the listed source.",
+  "size_mb": 0,
+  "formats": "URDF",
+  "distribution": "external"
+ },
+ {
+  "name": "hands/shadow_hand",
+  "upstream": "Shadow Robot (via OHRA)",
+  "license": "Not verified for the complete external package",
+  "note": "Operator-supplied model. Confirm the terms of the exact files obtained from the listed source.",
+  "size_mb": 0,
+  "formats": "URDF",
+  "distribution": "external"
+ },
+ {
+  "name": "hands/unitree_dex3_1",
+  "upstream": "Unitree Dex3-1 (via OHRA)",
+  "license": "Not verified for the complete external package",
+  "note": "Operator-supplied model. Confirm the terms of the exact files obtained from the listed source.",
+  "size_mb": 0,
+  "formats": "URDF",
+  "distribution": "external"
+ },
+ {
+  "name": "hands/leap_hand",
+  "upstream": "LEAP Hand (via OHRA)",
+  "license": "Not verified for the complete external package",
+  "note": "Operator-supplied model. Confirm the terms of the exact files obtained from the listed source.",
+  "size_mb": 0,
+  "formats": "URDF",
+  "distribution": "external"
+ },
+ {
+  "name": "hands/gaia_hand",
+  "upstream": "Gaia hand (via OHRA)",
+  "license": "Not verified for the complete external package",
+  "note": "Operator-supplied model. Confirm the terms of the exact files obtained from the listed source.",
+  "size_mb": 0,
+  "formats": "URDF",
+  "distribution": "external"
+ },
+ {
+  "name": "hands/dclaw",
+  "upstream": "D'Claw (lightning-grasp)",
+  "license": "Not verified for the complete external package",
+  "note": "Operator-supplied model. Confirm the terms of the exact files obtained from the listed source.",
+  "size_mb": 0,
+  "formats": "URDF",
+  "distribution": "external"
+ },
+ {
+  "name": "hands/barrett_bh8_280",
+  "upstream": "Robotnik Automation / barrett_hand_common",
+  "license": "BSD-3-Clause",
+  "note": "Vendor ROS package with BH8-280 and BH8-282 xacro and meshes. The previous generated URDF and USD conversions are external.",
+  "size_mb": 1.9,
+  "formats": "xacro",
+  "distribution": "included",
+  "notices": [
+   "LICENSE.vendor"
+  ],
+  "source_urls": [
+   "https://github.com/RobotnikAutomation/barrett_hand_common/tree/b3d96febf8ef7b2aae4dab6015928918324c364a"
+  ]
+ },
+ {
+  "name": "hands/agibot_omnihand_t2",
+  "upstream": "AgiBot omnihand_description (OmniHand T2)",
+  "license": "Not verified for the complete external package",
+  "note": "Operator-supplied model. Confirm the terms of the exact files obtained from the listed source.",
+  "size_mb": 0,
+  "formats": "URDF, xacro, MJCF",
+  "distribution": "external"
+ },
+ {
+  "name": "hands/revo3",
+  "upstream": "BrainCo Revo3 (likely), as-received USD",
+  "license": "Not verified for the complete external package",
+  "note": "Operator-supplied model. Confirm the terms of the exact files obtained from the listed source.",
+  "size_mb": 0,
+  "formats": "USD",
+  "distribution": "external"
+ },
+ {
+  "name": "hands/linkerhand",
+  "upstream": "linker-bot/linkerhand-urdf @075cc7d",
+  "license": "Not verified for the complete external package",
+  "note": "Operator-supplied model. Confirm the terms of the exact files obtained from the listed source.",
+  "size_mb": 0,
+  "formats": "URDF",
+  "distribution": "external"
+ },
+ {
+  "name": "hands/inspire",
+  "upstream": "Inspire hand (OmniGibson robot-assets)",
+  "license": "Not verified for the complete external package",
+  "note": "Operator-supplied model. Confirm the terms of the exact files obtained from the listed source.",
+  "size_mb": 0,
+  "formats": "USD",
+  "distribution": "external"
+ },
+ {
+  "name": "grippers/robotiq_2f85",
+  "upstream": "MuJoCo Menagerie / ROS-Industrial",
+  "license": "BSD-2-Clause",
+  "note": "MuJoCo Menagerie 2F-85 model only. The a-price ROS URDF package used by the composite Panda/UR presets is supplied separately.",
+  "size_mb": 3.2,
+  "formats": "MJCF",
+  "distribution": "included",
+  "notices": [
+   "mjcf_menagerie/LICENSE"
+  ],
+  "source_urls": [
+   "https://github.com/google-deepmind/mujoco_menagerie/tree/eea4c7431b63da8278b0ff31638e0b0e941cec0e/robotiq_2f85"
+  ]
+ },
+ {
+  "name": "grippers/unitree_dex1_1",
+  "upstream": "Unitree Dex1-1",
+  "license": "Not verified for the complete external package",
+  "note": "Operator-supplied model. Confirm the terms of the exact files obtained from the listed source.",
+  "size_mb": 0,
+  "formats": "URDF",
+  "distribution": "external"
+ },
+ {
+  "name": "arms/franka_panda",
+  "upstream": "Franka Robotics via cuRobo and MuJoCo Menagerie",
+  "license": "Apache-2.0",
+  "note": "Franka Emika Panda with its standard hand. The RobotEra XHand meshes and combined URDF require a separate supply.",
+  "size_mb": 47.3,
+  "formats": "URDF, MJCF",
+  "distribution": "included",
+  "notices": [
+   "LICENSE",
+   "NOTICE",
+   "mjcf_menagerie/LICENSE"
+  ],
+  "source_urls": [
+   "https://github.com/NVlabs/curobo/tree/a35a708ecfbb26eb9ab2d7ef22c65919c4fae4a9/curobo/content/assets/robot/franka_description",
+   "https://github.com/frankarobotics/franka_ros/tree/0.7.0",
+   "https://github.com/google-deepmind/mujoco_menagerie/tree/eea4c7431b63da8278b0ff31638e0b0e941cec0e/franka_emika_panda"
+  ]
+ },
+ {
+  "name": "arms/ur",
+  "upstream": "Universal Robots ur_description",
+  "license": "BSD-3-Clause",
+  "note": "UR10e URDF with UR10e and UR5e meshes.",
+  "size_mb": 20.2,
+  "formats": "URDF",
+  "distribution": "included",
+  "notices": [
+   "LICENSE"
+  ],
+  "source_urls": [
+   "https://github.com/NVlabs/curobo/tree/a35a708ecfbb26eb9ab2d7ef22c65919c4fae4a9/curobo/content/assets/robot/ur_description",
+   "https://github.com/UniversalRobots/Universal_Robots_ROS2_Description"
+  ]
+ },
+ {
+  "name": "arms/xarm6",
+  "upstream": "UFactory xArm6 + xArm gripper (ManiSkill/GSWorld)",
+  "license": "Not verified for the complete external package",
+  "note": "UFACTORY publishes its ROS models under BSD-3-Clause. Additional converted files in the former package have separate provenance.",
+  "size_mb": 0,
+  "formats": "URDF",
+  "distribution": "external",
+  "source_urls": [
+   "https://github.com/xArm-Developer/xarm_ros/tree/cf51617d98bc55a88d9aa735acfa43a0bbb8e425"
+  ]
+ },
+ {
+  "name": "arms/xarm7",
+  "upstream": "UFactory xArm7 + gripper (kywind/real2sim-eval)",
+  "license": "Not verified for the complete external package",
+  "note": "UFACTORY publishes its ROS models under BSD-3-Clause. Additional converted files in the former package have separate provenance.",
+  "size_mb": 0,
+  "formats": "URDF",
+  "distribution": "external",
+  "source_urls": [
+   "https://github.com/xArm-Developer/xarm_ros/tree/cf51617d98bc55a88d9aa735acfa43a0bbb8e425"
+  ]
+ },
+ {
+  "name": "arms/sawyer",
+  "upstream": "Rethink Sawyer",
+  "license": "Not verified for the complete external package",
+  "note": "Operator-supplied model. Confirm the terms of the exact files obtained from the listed source.",
+  "size_mb": 0,
+  "formats": "URDF",
+  "distribution": "external"
+ },
+ {
+  "name": "arms/arx_x5",
+  "upstream": "ARX X5",
+  "license": "Not verified for the complete external package",
+  "note": "Operator-supplied model. Confirm the terms of the exact files obtained from the listed source.",
+  "size_mb": 0,
+  "formats": "URDF",
+  "distribution": "external"
+ },
+ {
+  "name": "arms/agilex_piper_x",
+  "upstream": "AgileX Piper X",
+  "license": "Not verified for the complete external package",
+  "note": "Operator-supplied model. Confirm the terms of the exact files obtained from the listed source.",
+  "size_mb": 0,
+  "formats": "URDF",
+  "distribution": "external"
+ },
+ {
+  "name": "arms/openarm",
+  "upstream": "Enactic OpenArm (unimanual)",
+  "license": "Not verified for the complete external package",
+  "note": "Operator-supplied model. Confirm the terms of the exact files obtained from the listed source.",
+  "size_mb": 0,
+  "formats": "URDF",
+  "distribution": "external"
+ },
+ {
+  "name": "arms/so101",
+  "upstream": "LeRobot SO-101 follower (WorldComposer USD)",
+  "license": "Not verified for the complete external package",
+  "note": "Operator-supplied model. Confirm the terms of the exact files obtained from the listed source.",
+  "size_mb": 0,
+  "formats": "USD",
+  "distribution": "external"
+ },
+ {
+  "name": "arms/dobot_xtrainer",
+  "upstream": "Dobot X-Trainer (SolidWorks export)",
+  "license": "Not verified for the complete external package",
+  "note": "Operator-supplied model. Confirm the terms of the exact files obtained from the listed source.",
+  "size_mb": 0,
+  "formats": "URDF",
+  "distribution": "external"
+ },
+ {
+  "name": "arms/kinova_mico",
+  "upstream": "Kinova MICO m1n6s200 (OmniGibson 1.1.1)",
+  "license": "Not verified for the complete external package",
+  "note": "Operator-supplied model. Confirm the terms of the exact files obtained from the listed source.",
+  "size_mb": 0,
+  "formats": "URDF",
+  "distribution": "external"
+ },
+ {
+  "name": "arms/galaxea_a1",
+  "upstream": "Galaxea A1 (+ Inspire) (OmniGibson robot-assets source)",
+  "license": "Not verified for the complete external package",
+  "note": "Operator-supplied model. Confirm the terms of the exact files obtained from the listed source.",
+  "size_mb": 0,
+  "formats": "URDF, USD",
+  "distribution": "external"
+ },
+ {
+  "name": "arms/airbot_play_g2",
+  "upstream": "AIRBOT Play + G2 gripper",
+  "license": "Not verified for the complete external package",
+  "note": "Operator-supplied model. Confirm the terms of the exact files obtained from the listed source.",
+  "size_mb": 0,
+  "formats": "URDF, MJCF",
+  "distribution": "external"
+ },
+ {
+  "name": "arms/viperx_300s",
+  "upstream": "Trossen ViperX 300s",
+  "license": "Not verified for the complete external package",
+  "note": "Operator-supplied model. Confirm the terms of the exact files obtained from the listed source.",
+  "size_mb": 0,
+  "formats": "URDF",
+  "distribution": "external"
+ },
+ {
+  "name": "humanoids/dexmate",
+  "upstream": "dexmate-ai/dexmate-urdf v0.8.4",
+  "license": "Apache-2.0",
+  "note": "Dexmate URDF models and meshes as supplied at v0.8.4. The Vega/Sharpa USD is listed under assemblies/vega_1p_sharpa.",
+  "size_mb": 80.2,
+  "formats": "URDF",
+  "distribution": "included",
+  "notices": [
+   "LICENSE"
+  ],
+  "source_urls": [
+   "https://github.com/dexmate-ai/dexmate-urdf/tree/d8fc9c4962a5a9559aa2c72b3a55791bee66a2fb"
+  ]
+ },
+ {
+  "name": "humanoids/sharpa_north",
+  "upstream": "Sharpa North poc2_2 (sharpa_north_ces_lite_sdk)",
+  "license": "Not verified for the complete external package",
+  "note": "Operator-supplied model. Confirm the terms of the exact files obtained from the listed source.",
+  "size_mb": 0,
+  "formats": "URDF",
+  "distribution": "external"
+ },
+ {
+  "name": "humanoids/unitree_g1",
+  "upstream": "unitree_ros g1_description (via curobo)",
+  "license": "BSD-3-Clause",
+  "note": "Unitree G1 descriptions and vendor meshes. The separate grasp-synthesis calibration for Dex3 must be supplied by the operator.",
+  "size_mb": 54.4,
+  "formats": "URDF",
+  "distribution": "included",
+  "notices": [
+   "LICENSE"
+  ],
+  "source_urls": [
+   "https://github.com/NVlabs/curobo/tree/a35a708ecfbb26eb9ab2d7ef22c65919c4fae4a9/curobo/content/assets/robot/g1",
+   "https://github.com/unitreerobotics/unitree_ros/tree/157ff950351e5f535e03c5d85a16b7d594b3dbcc/robots/g1_description"
+  ]
+ },
+ {
+  "name": "humanoids/agibot_genie1",
+  "upstream": "AgiBot Genie-1",
+  "license": "Not verified for the complete external package",
+  "note": "Operator-supplied model. Confirm the terms of the exact files obtained from the listed source.",
+  "size_mb": 0,
+  "formats": "URDF",
+  "distribution": "external"
+ },
+ {
+  "name": "mobile/galaxea_r1",
+  "upstream": "Galaxea R1 (OmniGibson source)",
+  "license": "Not verified for the complete external package",
+  "note": "Operator-supplied model. Confirm the terms of the exact files obtained from the listed source.",
+  "size_mb": 0,
+  "formats": "URDF",
+  "distribution": "external"
+ },
+ {
+  "name": "mobile/galaxea_r1pro",
+  "upstream": "Galaxea R1 Pro (OmniGibson source)",
+  "license": "Not verified for the complete external package",
+  "note": "Operator-supplied model. Confirm the terms of the exact files obtained from the listed source.",
+  "size_mb": 0,
+  "formats": "URDF",
+  "distribution": "external"
+ },
+ {
+  "name": "mobile/fetch",
+  "upstream": "Fetch (OmniGibson source)",
+  "license": "Not verified for the complete external package",
+  "note": "Operator-supplied model. Confirm the terms of the exact files obtained from the listed source.",
+  "size_mb": 0,
+  "formats": "URDF",
+  "distribution": "external"
+ },
+ {
+  "name": "mobile/tiago",
+  "upstream": "PAL TIAGo dual (OmniGibson source)",
+  "license": "Not verified for the complete external package",
+  "note": "PAL Robotics labels the dual source xacro CC BY-NC-ND-3.0. Obtain a compatible description and any needed permissions from the rights holders.",
+  "size_mb": 0,
+  "formats": "URDF",
+  "distribution": "external",
+  "source_urls": [
+   "https://github.com/pal-robotics/tiago_dual_robot/blob/kinetic-devel/tiago_dual_description/robots/tiago_dual.urdf.xacro"
+  ]
+ },
+ {
+  "name": "mobile/stretch",
+  "upstream": "Hello Robot Stretch (OmniGibson source)",
+  "license": "Not verified for the complete external package",
+  "note": "Hello Robot publishes its description meshes under the Clear BSD License. Additional files in the former assembled package have separate provenance.",
+  "size_mb": 0,
+  "formats": "URDF",
+  "distribution": "external",
+  "source_urls": [
+   "https://github.com/hello-robot/stretch_urdf/tree/c8c6e27e1f87db126118049f22611399253cbe2b"
+  ]
+ },
+ {
+  "name": "mobile/locobot",
+  "upstream": "LoCoBot (OmniGibson source)",
+  "license": "Not verified for the complete external package",
+  "note": "Operator-supplied model. Confirm the terms of the exact files obtained from the listed source.",
+  "size_mb": 0,
+  "formats": "URDF",
+  "distribution": "external"
+ },
+ {
+  "name": "mobile/arx_x7s",
+  "upstream": "ARX X7s mobile",
+  "license": "Not verified for the complete external package",
+  "note": "Operator-supplied model. Confirm the terms of the exact files obtained from the listed source.",
+  "size_mb": 0,
+  "formats": "URDF",
+  "distribution": "external"
+ },
+ {
+  "name": "mobile/arx_lift2",
+  "upstream": "ARX Lift2",
+  "license": "Not verified for the complete external package",
+  "note": "Operator-supplied model. Confirm the terms of the exact files obtained from the listed source.",
+  "size_mb": 0,
+  "formats": "URDF",
+  "distribution": "external"
+ },
+ {
+  "name": "assemblies/vega_1p_sharpa",
+  "upstream": "MagicDexMate (team integration): Dexmate Vega 1P and Sharpa Wave, wheels welded",
+  "license": "See component notices and assembly provenance",
+  "note": "Vega 1P with welded wheels and two Sharpa Wave hands. The root and four configuration layers form the simulation model.",
+  "size_mb": 24.5,
+  "formats": "USD",
+  "distribution": "included",
+  "source_urls": [
+   "https://github.com/dexmate-ai/dexmate-urdf",
+   "https://github.com/sharpa-robotics/sharpa-urdf-usd-xml"
+  ],
+  "notices": [
+   "ATTRIBUTION.md"
+  ]
+ }
+]

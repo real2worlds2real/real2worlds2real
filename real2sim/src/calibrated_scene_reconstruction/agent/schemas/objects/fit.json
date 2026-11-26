@@ -1,0 +1,60 @@
+{
+  "name": "fit",
+  "input": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+      "session": {
+        "type": "string",
+        "minLength": 1
+      },
+      "object": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9_-]+$"
+      },
+      "max_evaluations": {
+        "type": "integer",
+        "minimum": 10,
+        "maximum": 2000
+      }
+    },
+    "required": [
+      "session",
+      "object"
+    ],
+    "additionalProperties": false
+  },
+  "output": {
+    "type": "object",
+    "required": [
+      "ok",
+      "evidence_images"
+    ],
+    "properties": {
+      "ok": {
+        "type": "boolean"
+      },
+      "evidence_images": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Evidence paths relative to the repository root (absolute for outputs outside it)"
+      },
+      "params": {
+        "type": "object"
+      },
+      "metrics": {
+        "type": "object",
+        "description": "Per-frame IoU/local differences and numeric thresholds"
+      },
+      "converged": {
+        "type": "boolean"
+      },
+      "round_dir": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  }
+}

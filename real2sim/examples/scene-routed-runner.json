@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "routes": [
+    {
+      "id": "physx",
+      "capabilities": ["physx", "usd_mesh", "rigid", "articulated", "static_environment_collision", "rigid_support_response", "scene_video", "configurable_timestep"],
+      "argv": ["/path/to/simulator-python", "/path/to/real2sim/scripts/isaac_lab_scene_adapter.py", "--scene", "{scene}", "--output", "{output}", "--manifest", "{manifest}", "--review-request", "{review_request}", "--viz", "none", "--device", "cuda:0"]
+    },
+    {
+      "id": "newton_vbd",
+      "capabilities": ["newton", "usd_mesh", "rigid", "articulated", "deformable", "hybrid", "rigid_deformable_contact", "static_environment_collision", "scene_video"],
+      "argv": ["/path/to/rendering-environment-python", "/path/to/real2sim/scripts/newton_scene_adapter.py", "--native-runtime", "/path/to/isolated-newton-packages", "--scene", "{scene}", "--output", "{output}", "--manifest", "{manifest}", "--review-request", "{review_request}"]
+    },
+    {
+      "id": "newton_mpm",
+      "capabilities": ["newton", "usd_mesh", "fluid", "static_environment_collision", "scene_video"],
+      "argv": ["/path/to/host-python", "/path/to/real2sim/scripts/fluid_scene_adapter.py", "--physics-runner", "/path/to/mpm-physics-runner.json", "--blender", "/path/to/blender", "--scene", "{scene}", "--output", "{output}", "--manifest", "{manifest}", "--review-request", "{review_request}"]
+    }
+  ]
+}

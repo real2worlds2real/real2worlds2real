@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "argv": ["/path/to/fixer-python", "/path/to/real2sim/scripts/fixer_view_adapter.py",
+           "--checkout", "/path/to/Fixer", "--weights", "/path/to/fixer-models",
+           "--request", "{request}", "--output", "{output}"]
+}

@@ -1,0 +1,87 @@
+{
+ "name": "japandi",
+ "rooms": [
+  "kitchen",
+  "dining",
+  "cafe",
+  "living",
+  "bedroom",
+  "bathroom",
+  "office"
+ ],
+ "prompt": "japandi style, light oak, paper screens, low minimal furniture, linen, soft neutral tones",
+ "support": [
+  "ash_veneer",
+  "oak_veneer_01",
+  "brushed_concrete"
+ ],
+ "floor": [
+  "laminate_floor_03",
+  "wood_floor"
+ ],
+ "wall_tint": {
+  "greige": [
+   0.95,
+   0.93,
+   0.88
+  ],
+  "warm_white": [
+   1.05,
+   1.02,
+   0.95
+  ]
+ },
+ "wall_pbr": [
+  "clay_plaster",
+  "beige_wall_002"
+ ],
+ "paint": {
+  "greige": [
+   1.0,
+   0.98,
+   0.93
+  ],
+  "charcoal": [
+   0.45,
+   0.45,
+   0.47
+  ],
+  "white": [
+   1.25,
+   1.22,
+   1.15
+  ]
+ },
+ "stain": {
+  "natural": [
+   1,
+   1,
+   1
+  ],
+  "ebony": [
+   0.3,
+   0.27,
+   0.25
+  ]
+ },
+ "ceiling_tint": [
+  1.05,
+  1.02,
+  0.95
+ ],
+ "hdri": [
+  "je_gray_02",
+  "overcast_soil_puresky",
+  "kloppenheim_06_puresky"
+ ],
+ "light": {
+  "temp": [
+   4200,
+   5600
+  ],
+  "scale": [
+   0.85,
+   1.2
+  ]
+ }
+}

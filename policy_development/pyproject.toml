@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+license = "MIT"
+license-files = ["LICENSE"]
+name = "astra-station"
+version = "0.1.0"
+description = "Astra policy development in simulation: an agent chooses, runs and compares methods on a station under budgets, freezes one deliverable and gets one sealed evaluation."
+requires-python = ">=3.10"
+# The controller is standard library only. Method tools and the station runtime use numpy and, per method, the
+# training stack named in the site file (configs/station/site.*.json).
+dependencies = []
+
+[project.optional-dependencies]
+runtime = ["numpy"]
+dev = ["numpy"]
+
+[project.scripts]
+astra-station = "astra_station.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 140

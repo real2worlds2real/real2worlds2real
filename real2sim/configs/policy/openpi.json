@@ -1,0 +1,28 @@
+{
+  "train_configs": [
+    {
+      "name": "pi05_pick_place",
+      "model": {
+        "pi05": true
+      },
+      "data": {
+        "repo_id": "pick_place/joints",
+        "arm_dofs": 7,
+        "hand_dofs": 22,
+        "base_config": {
+          "prompt_from_task": true,
+          "action_sequence_keys": [
+            "action"
+          ]
+        }
+      },
+      "weights": "gs://openpi-assets/checkpoints/pi05_base/params",
+      "training": {
+        "assets_base_dir": "outputs/openpi/assets",
+        "fsdp_devices": 2,
+        "num_workers": 8,
+        "wandb_enabled": false
+      }
+    }
+  ]
+}

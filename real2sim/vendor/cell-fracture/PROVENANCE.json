@@ -1,0 +1,19 @@
+{
+  "repository": "https://github.com/blender/blender-addons",
+  "verified_against_revision": "b42d68627734cb18af0e6f41537063984313a284",
+  "modified_files": ["fracture_cell_setup.py"],
+  "local_changes_recorded": "2026-11-26",
+  "package": "object_fracture_cell",
+  "license": "GPL-2.0-or-later; retained in source headers",
+  "files": [
+    "__init__.py",
+    "fracture_cell_calc.py",
+    "fracture_cell_setup.py"
+  ],
+  "local_integration_patches": [
+    "Use Blender 4.5 MANIFOLD Boolean solver for closed material intersections",
+    "Scale-relative merge tolerance preserves thin walls",
+    "No independent cell-vertex jitter: adjacent Voronoi boundaries must coincide",
+    "Disable destructive post-Boolean dissolve cleanup"
+  ]
+}

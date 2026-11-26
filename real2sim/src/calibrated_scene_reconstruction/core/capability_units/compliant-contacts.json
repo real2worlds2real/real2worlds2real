@@ -1,0 +1,9 @@
+{
+  "physical_units": {
+    "contact_stiffness": "N/m",
+    "contact_damping": "N*s/m"
+  },
+  "prior_validators": {
+    "compliant-contacts": "calibrated_scene_reconstruction.assets.compliant_contact:priors"
+  }
+}

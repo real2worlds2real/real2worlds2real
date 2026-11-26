@@ -1,0 +1,1 @@
+"""Library asset fetchers."""

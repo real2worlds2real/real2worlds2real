@@ -1,0 +1,15 @@
+# Observed direct host dependencies; Python 3.12. Not a transitive lock.
+Pillow==13.0.0
+numpy==2.5.4
+opencv-python-headless==4.14.0.94
+av==17.1.0
+imageio-ffmpeg==0.6.0
+openai==3.37.0
+httpx==0.28.1
+PyJWT==2.15.1
+cryptography==50.0.2
+pycolmap==4.2.1
+usd-core==26.11
+plyfile==1.1.5
+scipy==1.18.1
+xatlas==0.0.11

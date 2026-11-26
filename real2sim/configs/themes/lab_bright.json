@@ -1,0 +1,90 @@
+{
+ "name": "lab_bright",
+ "rooms": [
+  "lab",
+  "workshop",
+  "office"
+ ],
+ "prompt": "bright university robotics lab, white walls, grey carpet tiles, fluorescent panel lights, workbenches",
+ "support": [
+  "proc_laminate_white",
+  "proc_laminate_grey",
+  "ash_veneer",
+  "oak_veneer_01"
+ ],
+ "floor": [
+  "proc_carpet_tile_grey",
+  "proc_carpet_tile_bluegrey",
+  "proc_vinyl_grey"
+ ],
+ "wall_tint": {
+  "white": [
+   1.05,
+   1.05,
+   1.05
+  ],
+  "light_grey": [
+   0.92,
+   0.93,
+   0.95
+  ],
+  "teal": [
+   0.72,
+   0.92,
+   0.95
+  ]
+ },
+ "wall_pbr": [
+  "proc_painted_drywall",
+  "plastered_wall",
+  "painted_plaster_wall"
+ ],
+ "paint": {
+  "white": [
+   1.25,
+   1.22,
+   1.15
+  ],
+  "light_grey": [
+   0.9,
+   0.9,
+   0.92
+  ],
+  "charcoal": [
+   0.45,
+   0.45,
+   0.47
+  ]
+ },
+ "stain": {
+  "natural": [
+   1,
+   1,
+   1
+  ],
+  "white_wash": [
+   1.3,
+   1.28,
+   1.22
+  ]
+ },
+ "ceiling_tint": [
+  1.0,
+  1.0,
+  1.0
+ ],
+ "hdri": [
+  "je_gray_02",
+  "overcast_soil_puresky"
+ ],
+ "light": {
+  "temp": [
+   5400,
+   6500
+  ],
+  "scale": [
+   0.9,
+   1.2
+  ]
+ }
+}

@@ -1,0 +1,13 @@
+{
+ "schema": "astra_reward_term_v1",
+ "id": "place_upright_release",
+ "phase": "place",
+ "description": "After release: object upright, still, at the target offset.",
+ "inputs": [
+  "cloud+labels",
+  "tactile_n"
+ ],
+ "formula": "+1 if no contact and object height ~ start height and xy within band",
+ "validated_on": [],
+ "cautions": "Unvalidated."
+}

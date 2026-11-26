@@ -1,0 +1,139 @@
+{
+ "schema_version": 1,
+ "frame": {
+  "meters_per_unit": 1,
+  "up_axis": "Z",
+  "scale_source": "Concept layout. The example desk dimensions are authored. The object geometry and its evidence come from the bundle supplied by the operator.",
+  "scale_verified": false
+ },
+ "backend": "physx",
+ "objects": [
+  {
+   "id": "blue_cup",
+   "bundle": "/path/to/accepted-object-run/attempts/<attempt>/simulator-001",
+   "transform": [
+    [
+     1,
+     0,
+     0,
+     0.0
+    ],
+    [
+     0,
+     1,
+     0,
+     0.0
+    ],
+    [
+     0,
+     0,
+     1,
+     1.0
+    ],
+    [
+     0,
+     0,
+     0,
+     1
+    ]
+   ]
+  }
+ ],
+ "backgrounds": [
+  {
+   "id": "desk",
+   "path": "desk_visual.usda",
+   "format": "mesh",
+   "observed": false,
+   "transform": [
+    [
+     1,
+     0,
+     0,
+     0.0
+    ],
+    [
+     0,
+     1,
+     0,
+     0.0
+    ],
+    [
+     0,
+     0,
+     1,
+     1.0
+    ],
+    [
+     0,
+     0,
+     0,
+     1
+    ]
+   ]
+  }
+ ],
+ "supports": [
+  {
+   "id": "worktop",
+   "size_m": [
+    1.2,
+    0.8,
+    0.05
+   ],
+   "transform": [
+    [
+     1,
+     0,
+     0,
+     0.0
+    ],
+    [
+     0,
+     1,
+     0,
+     0.0
+    ],
+    [
+     0,
+     0,
+     1,
+     0.975
+    ],
+    [
+     0,
+     0,
+     0,
+     1
+    ]
+   ],
+   "static_friction": 0.6,
+   "dynamic_friction": 0.5,
+   "restitution": 0.0
+  }
+ ],
+ "support_requirements": [
+  {
+   "asset_id": "blue_cup",
+   "support_id": "worktop",
+   "release_height_m": 0.03,
+   "minimum_drop_m": 0.02,
+   "separation_tolerance_m": 0.006,
+   "max_late_speed_m_s": 0.03
+  }
+ ],
+ "review_camera": {
+  "eye_m": [
+   0.65,
+   -0.95,
+   1.45
+  ],
+  "target_m": [
+   -0.08,
+   0.0,
+   1.04
+  ],
+  "horizontal_fov_deg": 50
+ },
+ "notes": "Synthetic worktop layout with the cup at its centre. Supply a reviewed object bundle. The station factory adds the robot."
+}

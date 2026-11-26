@@ -1,0 +1,87 @@
+{
+ "name": "farmhouse",
+ "rooms": [
+  "kitchen",
+  "dining",
+  "cafe",
+  "living",
+  "bedroom",
+  "bathroom"
+ ],
+ "prompt": "farmhouse style, shiplap and painted wood trim, rustic oak furniture, woven baskets, warm cozy light",
+ "support": [
+  "american_walnut_veneer",
+  "wood_table_001",
+  "kitchen_wood"
+ ],
+ "floor": [
+  "brown_planks_05",
+  "diagonal_parquet",
+  "brown_floor_tiles"
+ ],
+ "wall_tint": {
+  "cream": [
+   1.08,
+   1.03,
+   0.9
+  ],
+  "blush": [
+   1.08,
+   0.94,
+   0.9
+  ]
+ },
+ "wall_pbr": [
+  "beige_wall_001",
+  "clay_plaster"
+ ],
+ "paint": {
+  "sage": [
+   0.72,
+   0.86,
+   0.7
+  ],
+  "butter": [
+   1.2,
+   1.12,
+   0.8
+  ],
+  "white": [
+   1.25,
+   1.22,
+   1.15
+  ]
+ },
+ "stain": {
+  "honey": [
+   1.1,
+   0.9,
+   0.62
+  ],
+  "natural": [
+   1,
+   1,
+   1
+  ]
+ },
+ "ceiling_tint": [
+  1.08,
+  1.03,
+  0.9
+ ],
+ "hdri": [
+  "meadow_2",
+  "symmetrical_garden_02",
+  "spruit_sunrise"
+ ],
+ "light": {
+  "temp": [
+   3800,
+   5200
+  ],
+  "scale": [
+   0.85,
+   1.2
+  ]
+ }
+}

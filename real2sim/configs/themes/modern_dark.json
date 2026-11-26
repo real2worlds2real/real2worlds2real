@@ -1,0 +1,87 @@
+{
+ "name": "modern_dark",
+ "rooms": [
+  "kitchen",
+  "dining",
+  "cafe",
+  "living",
+  "bedroom",
+  "bathroom",
+  "office"
+ ],
+ "prompt": "modern dark interior, charcoal walls, black fixtures, walnut furniture, moody low light",
+ "support": [
+  "marble_01",
+  "grey_cartago_01",
+  "grey_cartago_03"
+ ],
+ "floor": [
+  "dark_wooden_planks",
+  "floor_tiles_06"
+ ],
+ "wall_tint": {
+  "grey_blue": [
+   0.85,
+   0.92,
+   1.05
+  ],
+  "slate": [
+   0.72,
+   0.74,
+   0.78
+  ]
+ },
+ "wall_pbr": [
+  "painted_plaster_wall",
+  "grey_plaster"
+ ],
+ "paint": {
+  "navy": [
+   0.38,
+   0.48,
+   0.78
+  ],
+  "charcoal": [
+   0.45,
+   0.45,
+   0.47
+  ],
+  "forest": [
+   0.4,
+   0.55,
+   0.45
+  ]
+ },
+ "stain": {
+  "ebony": [
+   0.3,
+   0.27,
+   0.25
+  ],
+  "walnut": [
+   0.55,
+   0.42,
+   0.32
+  ]
+ },
+ "ceiling_tint": [
+  1.05,
+  1.02,
+  0.95
+ ],
+ "hdri": [
+  "venice_sunset",
+  "belfast_sunset_puresky",
+  "satara_night_no_lamps"
+ ],
+ "light": {
+  "temp": [
+   3000,
+   4500
+  ],
+  "scale": [
+   0.75,
+   1.05
+  ]
+ }
+}

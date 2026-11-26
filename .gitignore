@@ -1,0 +1,17 @@
+# Each part keeps its own ignore rules (real2sim/.gitignore, policy_development/.gitignore, ...).
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+.pytest_cache/
+.ruff_cache/
+.vscode/
+.idea/
+.DS_Store
+.env.local
+/.venv/
+.claude/worktrees/
+
+
+# runs of the end-to-end layer started from the repository root
+/outputs/

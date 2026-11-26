@@ -1,0 +1,31 @@
+{
+  "name": "cloth_proposal",
+  "input": {
+    "type": "object",
+    "properties": {
+      "session": {"type": "string", "minLength": 1},
+      "object": {"type": "string", "pattern": "^[A-Za-z0-9_-]+$"},
+      "candidate": {"type": "string", "minLength": 1},
+      "observation": {"type": "string", "minLength": 1},
+      "steps": {"type": "integer", "minimum": 10, "maximum": 5000},
+      "learning_rate": {"type": "number", "exclusiveMinimum": 0, "maximum": 0.0001},
+      "membrane_weight": {"type": "number", "minimum": 0, "maximum": 1000},
+      "mode": {"enum": ["field", "nodes", "spatial"]}
+    },
+    "required": ["session", "object", "candidate", "observation"],
+    "additionalProperties": false
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "ok": {"type": "boolean", "description": "Proposal generation completed; never source, native or task approval"},
+      "source_ok": {"type": "boolean"},
+      "proposal_only": {"const": true},
+      "task_approved": {"const": false},
+      "candidate": {"type": "string"},
+      "evidence_images": {"type": "array", "items": {"type": "string"}}
+    },
+    "required": ["ok", "source_ok", "proposal_only", "task_approved", "candidate", "evidence_images"],
+    "additionalProperties": true
+  }
+}

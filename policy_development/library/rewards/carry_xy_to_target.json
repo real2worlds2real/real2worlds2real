@@ -1,0 +1,12 @@
+{
+ "schema": "astra_reward_term_v1",
+ "id": "carry_xy_to_target",
+ "phase": "carry",
+ "description": "Negative horizontal distance of the carried object to a target point defined relative to another label.",
+ "inputs": [
+  "cloud+labels"
+ ],
+ "formula": "-|xy(label_a) - (xy(label_b) + offset)|",
+ "validated_on": [],
+ "cautions": "Twin tolerances are looser than real (twin_success_saturates)."
+}

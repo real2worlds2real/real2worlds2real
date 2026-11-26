@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "capabilities": ["train", "transcode"],
+  "argv": ["/path/to/host-python", "/path/to/real2sim/scripts/3dgrut_background_adapter.py",
+           "--checkout", "/path/to/3dgrut", "--python", "/path/to/3dgrut-python",
+           "--request", "{request}", "--output", "{output}"]
+}

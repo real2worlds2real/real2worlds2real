@@ -1,0 +1,91 @@
+# Root allowlist: new experiment folders stay local by default.
+/*
+!/.gitignore
+!/.gitattributes
+!/README.md
+!/LICENSE
+!/AGENTS.md
+!/THIRD_PARTY.md
+!/pyproject.toml
+# agent harness
+!/src/
+!/scripts/
+!/skills/
+!/examples/
+!/docs/
+!/requirements/
+!/vendor/
+# scene pipeline
+!/apps/
+!/assets/
+!/configs/
+!/data/
+!/patches/
+!/pipeline/
+!/setup/
+!/third_party/
+!/tools/
+
+# Local authorization, environments and caches anywhere.
+**/__pycache__/
+**/*.py[cod]
+**/*.egg-info/
+**/.pytest_cache/
+**/.ruff_cache/
+**/.venv*/
+**/.envs/
+**/.tools/
+**/.tmp/
+**/.private/
+**/.cache/
+**/.codex/
+**/.openai/
+**/.env
+**/.env.*
+**/*credentials*.json
+**/auth.json
+**/host.json
+**/session.lock
+**/*.pem
+**/*.key
+**/*.sif
+
+# Generated task workspaces and evidence of the agent harness (kept outside the checkout or in these folders).
+/runs/
+/logs/
+/integration/
+/references/
+/demos/
+/.claude/worktrees/
+
+# Environments, toolkits and weights built by setup/*.sh.
+/envs/
+/third_party/blender
+*.pt
+*.pth
+*.safetensors
+
+# Generated sessions, data and outputs of the scene pipeline.
+/sessions/
+/real/
+/outputs/
+/archive/
+/assets/polyhaven/
+/assets/abo/
+/assets/robots/built/
+/assets/library_embeddings.npz
+/assets/ycb/
+/assets/garments/
+/assets/cloth_real/
+/configs/*/scene_graph.pre_pano.json
+/notes/loop.md
+/notes/refactor_baseline/
+/notes/refactor_log.md
+
+# Per-machine settings (ISAAC_RUNTIME, ISAAC_PYTHON, ISAAC_IMAGE, SCENE_RECONSTRUCTION_YCB_ROOT).
+.env.local
+
+# Editor / OS.
+.vscode/
+.idea/
+.DS_Store

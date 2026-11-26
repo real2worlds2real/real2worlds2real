@@ -1,0 +1,171 @@
+{
+ "name": "vega_1p_sharpa_arm",
+ "kind": "half_humanoid",
+ "_note": "Right-arm IK with the torso fixed at home. The policy controls the arm and hand.",
+ "usd": "assets/robots/assemblies/vega_1p_sharpa/vega_1p_sharpa.usd",
+ "usd_env": "SCENE_RECONSTRUCTION_VEGA_USD",
+ "base": {
+  "type": "fixed",
+  "mount": "floor",
+  "height": 0.0,
+  "standoff": [
+   0.05,
+   0.4
+  ],
+  "lateral": [
+   -0.7,
+   0.9
+  ],
+  "yaw_tol_deg": 25,
+  "_note": "closer to the support than vega_1p_sharpa's bases (the arm reaches without the torso), and wider"
+ },
+ "drives": [
+  {
+   "match": "^(torso|head)",
+   "kp": 20000.0,
+   "max_force": 20000.0
+  },
+  {
+   "match": "^(L_arm|R_arm)",
+   "kp": 4000.0,
+   "max_force": 2000.0
+  },
+  {
+   "match": ".",
+   "kp": 400.0,
+   "max_force": 2000.0
+  }
+ ],
+ "home": {
+  "torso_j1": 1.2,
+  "torso_j2": 2.27,
+  "torso_j3": 0.5,
+  "head_j1": 0.4363323129985824,
+  "head_j2": 0.0,
+  "head_j3": 0.0,
+  "R_arm_j1": -0.84,
+  "R_arm_j2": -0.51,
+  "R_arm_j3": -0.37,
+  "R_arm_j4": -1.3,
+  "R_arm_j5": 0.65,
+  "R_arm_j6": 0.29,
+  "R_arm_j7": 0.03,
+  "L_arm_j1": 1.5,
+  "L_arm_j2": 0.1,
+  "L_arm_j3": 0.0,
+  "L_arm_j4": -0.3,
+  "L_arm_j5": 0.0,
+  "L_arm_j6": 0.0,
+  "L_arm_j7": 0.0
+ },
+ "arms": {
+  "right": {
+   "_ik_joints": "the right arm alone; torso, head and left arm hold the home pose (left arm tucked beside the body)",
+   "ik_joints": [
+    "R_arm_j1",
+    "R_arm_j2",
+    "R_arm_j3",
+    "R_arm_j4",
+    "R_arm_j5",
+    "R_arm_j6",
+    "R_arm_j7"
+   ],
+   "tcp_link": "right_hand_C_MC",
+   "tcp_offset": [
+    0,
+    0,
+    0
+   ],
+   "tcp_axes": {
+    "approach": "+x",
+    "fingers": "+z",
+    "thumb": "+y"
+   },
+   "ee": {
+    "type": "dexterous",
+    "joints": "^right_",
+    "close": {
+     "mode": "frac_upper",
+     "fraction": {
+      "thumb_CMC_FE": 0.55,
+      "thumb_MCP_FE": 0.45,
+      "thumb_IP": 0.4,
+      "index_MCP_FE": 0.6,
+      "index_PIP": 0.6,
+      "index_DIP": 0.45,
+      "middle_MCP_FE": 0.6,
+      "middle_PIP": 0.6,
+      "middle_DIP": 0.45,
+      "ring_MCP_FE": 0.6,
+      "ring_PIP": 0.6,
+      "ring_DIP": 0.45,
+      "pinky_CMC": 0.4,
+      "pinky_MCP_FE": 0.6,
+      "pinky_PIP": 0.6,
+      "pinky_DIP": 0.45
+     },
+     "cap": 0.95
+    },
+    "grasp": "power_lateral",
+    "bodex": {
+     "asset": "assets/grasping/hands/sharpa_wave/sharpa_wave_right.yml",
+     "_note": "BODex hand asset (grasping.bodex): its base link and joint names are this arm's hand link / joints"
+    },
+    "contact_material": {
+     "static_friction": 1.0,
+     "dynamic_friction": 1.0,
+     "combine": "max",
+     "source": "the vendor's own simulation model of this hand (assets/robots/hands/sharpa_wave_ha4_v2_1/right_sharpa_wave/right_sharpa_wave.xml) gives its elastomer fingertips and every other hand geom no friction, so MuJoCo's default sliding friction 1.0 applies, and MuJoCo combines two geoms' friction by taking the larger; not measured on the real hand"
+    }
+   },
+   "shoulder": [
+    -0.087,
+    -0.169,
+    1.458
+   ],
+   "_shoulder": "first arm joint's link at home, base frame (z above the base mount): BODex seeds face it"
+  }
+ },
+ "cameras": [
+  {
+   "name": "head",
+   "role": "head",
+   "link": "zed_left_camera",
+   "quat_wxyz": [
+    0.0,
+    0.70710678,
+    0.0,
+    0.70710678
+   ],
+   "K": [
+    [
+     367.416,
+     0,
+     483.675
+    ],
+    [
+     0,
+     367.389,
+     282.455
+    ],
+    [
+     0,
+     0,
+     1
+    ]
+   ],
+   "size": [
+    960,
+    600
+   ]
+  }
+ ],
+ "physics": {
+  "disable_gravity": true,
+  "self_collision": false,
+  "solver_iters": [
+   32,
+   4
+  ]
+ }
+}

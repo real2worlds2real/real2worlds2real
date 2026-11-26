@@ -1,0 +1,19 @@
+[submodule "real2sim/third_party/sam-3d-objects"]
+	path = real2sim/third_party/sam-3d-objects
+	url = https://github.com/facebookresearch/sam-3d-objects.git
+	ignore = dirty
+[submodule "real2sim/third_party/MoGe"]
+	path = real2sim/third_party/MoGe
+	url = https://github.com/microsoft/MoGe.git
+[submodule "real2sim/third_party/depth-anything-3"]
+	path = real2sim/third_party/depth-anything-3
+	url = https://github.com/ByteDance-Seed/Depth-Anything-3.git
+[submodule "real2sim/third_party/3dgrut"]
+	path = real2sim/third_party/3dgrut
+	url = https://github.com/nv-tlabs/3dgrut.git
+[submodule "real2sim/third_party/diffusion_policy"]
+	path = real2sim/third_party/diffusion_policy
+	url = https://github.com/real-stanford/diffusion_policy.git
+[submodule "real2sim/third_party/openpi"]
+	path = real2sim/third_party/openpi
+	url = https://github.com/Physical-Intelligence/openpi.git

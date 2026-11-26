@@ -1,0 +1,29 @@
+{
+  "name": "sheet_reference",
+  "input": {
+    "type": "object",
+    "properties": {
+      "session": {"type": "string", "minLength": 1},
+      "object": {"type": "string", "pattern": "^[A-Za-z0-9_-]+$"},
+      "link": {"type": "string", "pattern": "^[A-Za-z0-9_]+$"},
+      "spacing_m": {"type": "number", "minimum": 0.00001, "maximum": 0.01}
+    },
+    "required": ["session", "object", "link"],
+    "additionalProperties": false
+  },
+  "output": {
+    "type": "object",
+    "properties": {
+      "ok": {"const": true},
+      "source_ok": {"const": true},
+      "proposal_only": {"const": true},
+      "task_approved": {"const": false},
+      "world_pose_approved": {"const": false},
+      "material_mesh": {"type": "string"},
+      "reference_photo": {"type": "string"},
+      "evidence_images": {"type": "array", "items": {"type": "string"}}
+    },
+    "required": ["ok", "source_ok", "proposal_only", "task_approved", "world_pose_approved", "material_mesh", "reference_photo", "evidence_images"],
+    "additionalProperties": true
+  }
+}

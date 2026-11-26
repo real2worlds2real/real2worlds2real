@@ -1,0 +1,34 @@
+{
+  "object_tools": {
+    "hand_cloth": "calibrated_scene_reconstruction.agent.hinged_tool:execute"
+  },
+  "object_descriptions": {
+    "hand_cloth": "Validate an explicitly requested native hand/cloth friction interaction: free-hand preflight, positive grasp, matched zero-friction control and bound criterion proof. Never grants task or delivery approval."
+  },
+  "hand_checks": {
+    "lid_open": true,
+    "rim_material_after_opening": true
+  },
+  "hand_sources": {
+    "hinged-lids": "apps/scene/check_hand_cloth.py"
+  },
+  "hand_preparation": {
+    "hinged-lids": "calibrated_scene_reconstruction.apps.reconstruction.hinged_acceptance:preparation"
+  },
+  "hand_initial_state": {
+    "hinged-lids": "calibrated_scene_reconstruction.apps.reconstruction.hinged_acceptance:initial"
+  },
+  "hand_opened_state": {
+    "hinged-lids": "calibrated_scene_reconstruction.apps.reconstruction.hinged_acceptance:opened"
+  },
+  "fingerprint": {
+    "tasks/mechanisms/wipe.py": "tasks/mechanisms/wipe.py",
+    "apps/reconstruction/hinged_acceptance.py": "apps/reconstruction/hinged_acceptance.py"
+  },
+  "hand_fingerprint": {
+    "apps/scene/check_hand_cloth.py": "apps/scene/check_hand_cloth.py"
+  },
+  "compatibility": {
+    "calibrated_scene_reconstruction.scene.objects.hand_cloth": "calibrated_scene_reconstruction.agent.hand_cloth"
+  }
+}

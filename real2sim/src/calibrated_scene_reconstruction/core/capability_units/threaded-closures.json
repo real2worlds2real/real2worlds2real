@@ -1,0 +1,14 @@
+{
+  "mechanism": {
+    "thread": "calibrated_scene_reconstruction.assets.thread_capability:validate"
+  },
+  "native_checks": {
+    "thread": "calibrated_scene_reconstruction.apps.reconstruction.thread_backend:run"
+  },
+  "fingerprint": {
+    "assets/thread_geometry.py": "assets/thread_geometry.py",
+    "assets/thread_capability.py": "assets/thread_capability.py",
+    "tasks/mechanisms/thread.py": "tasks/mechanisms/thread.py",
+    "tasks/mechanisms/thread_contact.py": "tasks/mechanisms/thread_contact.py"
+  }
+}

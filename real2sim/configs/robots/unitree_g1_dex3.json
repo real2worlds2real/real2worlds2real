@@ -1,0 +1,148 @@
+{
+ "name": "unitree_g1_dex3",
+ "kind": "humanoid",
+ "_note": "Pelvis welded at standing height (manipulation only, no balance control).",
+ "urdf": {
+  "body": "assets/robots/humanoids/unitree_g1/g1_29dof_with_hand_rev_1_0.urdf"
+ },
+ "base": {
+  "type": "fixed",
+  "mount": "floor",
+  "height": 0.793,
+  "standoff": [
+   0.08,
+   0.25
+  ],
+  "lateral": [
+   -0.25,
+   0.0
+  ],
+  "yaw_tol_deg": 15,
+  "_note": "1.3 m tall with ~0.5 m arms: stands close (the counter body is recessed under the slab; the torso's front is ~0.1 m ahead of the pelvis, so 0.08 m is about the closest the chest clears a slab edge). Lateral is where the base stands to the right (+) of the target: the reaching right shoulder sits 0.1 m right of the pelvis (arms.right.shoulder), so the base stands up to 0.25 m LEFT of the target and the target falls in front of that shoulder (-0.15 .. +0.1 m); the former [0, 0.3] put it 0.1-0.4 m across the body"
+ },
+ "drives": [
+  {
+   "match": "_hand_",
+   "kp": 100.0,
+   "max_force": 20.0
+  },
+  {
+   "match": "^waist",
+   "kp": 20000.0,
+   "max_force": 2000.0
+  },
+  {
+   "match": "(hip|knee|ankle)",
+   "kp": 20000.0,
+   "max_force": 2000.0
+  },
+  {
+   "match": "(shoulder|elbow|wrist)",
+   "kp": 2000.0,
+   "max_force": 500.0
+  }
+ ],
+ "home": {
+  "left_shoulder_roll_joint": 0.25,
+  "left_elbow_joint": 1.0,
+  "right_shoulder_pitch_joint": -0.3,
+  "right_shoulder_roll_joint": -0.25,
+  "right_elbow_joint": 0.9
+ },
+ "arms": {
+  "right": {
+   "ik_joints": [
+    "waist_yaw_joint",
+    "waist_roll_joint",
+    "waist_pitch_joint",
+    "right_shoulder_pitch_joint",
+    "right_shoulder_roll_joint",
+    "right_shoulder_yaw_joint",
+    "right_elbow_joint",
+    "right_wrist_roll_joint",
+    "right_wrist_pitch_joint",
+    "right_wrist_yaw_joint"
+   ],
+   "tcp_link": "right_hand_palm_link",
+   "tcp_offset": [
+    0,
+    0,
+    0
+   ],
+   "tcp_axes": {
+    "approach": "+y",
+    "fingers": "+x"
+   },
+   "ee": {
+    "type": "dexterous",
+    "joints": "^right_hand_",
+    "close": {
+     "mode": "targets",
+     "open": {},
+     "closed": {
+      "right_hand_thumb_0_joint": 0.0,
+      "right_hand_thumb_1_joint": 0.5,
+      "right_hand_thumb_2_joint": -1.0,
+      "right_hand_middle_0_joint": 1.0,
+      "right_hand_middle_1_joint": 1.2,
+      "right_hand_index_0_joint": 1.0,
+      "right_hand_index_1_joint": 1.2
+     }
+    },
+    "grasp": "power_lateral",
+    "bodex": {
+     "asset": "assets/grasping/hands/unitree_dex3/unitree_dex3_right.yml",
+     "_note": "BODex hand asset (grasping.bodex): its base link and joint names are this arm's hand link / joints"
+    }
+   },
+   "shoulder": [
+    0.0,
+    -0.1,
+    0.292
+   ],
+   "_shoulder": "first arm joint's link at home, base frame (z above the base mount): BODex seeds face it"
+  }
+ },
+ "cameras": [
+  {
+   "name": "head",
+   "role": "head",
+   "link": "head_link",
+   "quat_wxyz": [
+    -0.612372,
+    -0.353553,
+    0.353553,
+    0.612372
+   ],
+   "K": [
+    [
+     400,
+     0,
+     480
+    ],
+    [
+     0,
+     400,
+     300
+    ],
+    [
+     0,
+     0,
+     1
+    ]
+   ],
+   "size": [
+    960,
+    600
+   ],
+   "_note": "head_link +x forward, +z up; USD camera -z view: looking forward, pitched 30 deg down",
+   "pos": [
+    0.08,
+    0.0,
+    0.43
+   ],
+   "_mount": "head_link's mesh spans z 0.33-0.53 m, front face x 0.074 m"
+  }
+ ],
+ "_axes": "tcp_axes measured by apps/robot_build.py (fingers' open direction, curl direction)"
+}

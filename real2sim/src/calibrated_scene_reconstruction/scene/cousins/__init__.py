@@ -1,0 +1,1 @@
+"""Scene reconstruction domain."""

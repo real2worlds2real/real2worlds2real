@@ -1,0 +1,59 @@
+{
+  "name": "task_check",
+  "input": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+      "session": {
+        "type": "string",
+        "minLength": 1
+      },
+      "background": {
+        "enum": [
+          "mesh",
+          "zone",
+          "splat",
+          "blender"
+        ]
+      },
+      "timeout": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 3600
+      }
+    },
+    "required": [
+      "session"
+    ],
+    "additionalProperties": false
+  },
+  "output": {
+    "type": "object",
+    "required": [
+      "ok",
+      "evidence_images"
+    ],
+    "properties": {
+      "ok": {
+        "type": "boolean"
+      },
+      "evidence_images": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Evidence paths relative to the repository root (absolute for outputs outside it)"
+      },
+      "pass": {
+        "type": "boolean"
+      },
+      "what": {
+        "type": "string"
+      },
+      "script": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  }
+}

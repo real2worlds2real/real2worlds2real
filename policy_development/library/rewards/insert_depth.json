@@ -1,0 +1,12 @@
+{
+ "schema": "astra_reward_term_v1",
+ "id": "insert_depth",
+ "phase": "insert",
+ "description": "Depth of one object inside another along z.",
+ "inputs": [
+  "cloud+labels"
+ ],
+ "formula": "clip(z_top(b) - z_bottom(a), 0, d) / d",
+ "validated_on": [],
+ "cautions": ""
+}

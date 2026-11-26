@@ -1,0 +1,80 @@
+{
+ "name": "mediterranean",
+ "rooms": [
+  "kitchen",
+  "dining",
+  "cafe",
+  "living",
+  "bedroom",
+  "bathroom"
+ ],
+ "prompt": "mediterranean style, white lime plaster, terracotta tiles, arched doorways, olive plants",
+ "support": [
+  "terrazzo_tiles",
+  "marble_01"
+ ],
+ "floor": [
+  "terracotta_floor_tiles",
+  "brown_floor_tiles"
+ ],
+ "wall_tint": {
+  "warm_white": [
+   1.05,
+   1.02,
+   0.95
+  ]
+ },
+ "wall_pbr": [
+  "white_plaster_02",
+  "plastered_wall"
+ ],
+ "paint": {
+  "aegean": [
+   0.5,
+   0.65,
+   0.95
+  ],
+  "terracotta": [
+   1.15,
+   0.75,
+   0.58
+  ],
+  "white": [
+   1.25,
+   1.22,
+   1.15
+  ]
+ },
+ "stain": {
+  "honey": [
+   1.1,
+   0.9,
+   0.62
+  ],
+  "white_wash": [
+   1.3,
+   1.28,
+   1.22
+  ]
+ },
+ "ceiling_tint": [
+  1.05,
+  1.02,
+  0.95
+ ],
+ "hdri": [
+  "spiaggia_di_mondello",
+  "kloofendal_48d_partly_cloudy_puresky",
+  "noon_grass"
+ ],
+ "light": {
+  "temp": [
+   5000,
+   6500
+  ],
+  "scale": [
+   1.0,
+   1.35
+  ]
+ }
+}

@@ -1,0 +1,94 @@
+{
+ "name": "franka_panda__robotiq_2f85",
+ "kind": "arm",
+ "_note": "DROID's arm: a Panda whose own hand is replaced by a Robotiq 2F-85 on panda_link8, yawed like the Panda hand; the coupling plate is not modelled",
+ "urdf": {
+  "body": "assets/robots/arms/franka_panda/franka_panda.urdf",
+  "drop": [
+   "panda_hand",
+   "right_gripper"
+  ],
+  "ee": "assets/robots/grippers/robotiq_2f85/urdf/robots/robotiq_arg85_description.urdf",
+  "flange": "panda_link8",
+  "prefix": "ee_",
+  "rpy": [
+   0,
+   0,
+   -0.785398163397
+  ]
+ },
+ "base": {
+  "type": "fixed",
+  "mount": "pedestal",
+  "height": "support",
+  "standoff": [
+   0.12,
+   0.3
+  ],
+  "lateral": [
+   -0.2,
+   0.2
+  ],
+  "yaw_tol_deg": 15
+ },
+ "drives": [
+  {
+   "match": "^panda_joint",
+   "kp": 4000.0,
+   "max_force": 2000.0
+  },
+  {
+   "match": "^ee_",
+   "kp": 400.0,
+   "max_force": 200.0
+  }
+ ],
+ "home": {
+  "panda_joint1": 0.0,
+  "panda_joint2": -0.785,
+  "panda_joint3": 0.0,
+  "panda_joint4": -2.356,
+  "panda_joint5": 0.0,
+  "panda_joint6": 1.571,
+  "panda_joint7": 0.785
+ },
+ "arms": {
+  "right": {
+   "ik_joints": [
+    "panda_joint1",
+    "panda_joint2",
+    "panda_joint3",
+    "panda_joint4",
+    "panda_joint5",
+    "panda_joint6",
+    "panda_joint7"
+   ],
+   "tcp_link": "ee_robotiq_85_base_link",
+   "tcp_offset": [
+    0,
+    0,
+    0.145
+   ],
+   "tcp_axes": {
+    "approach": "+z",
+    "closing": "+x"
+   },
+   "ee": {
+    "type": "parallel",
+    "joints": "^ee_finger_joint$",
+    "max_width": 0.085,
+    "close": {
+     "mode": "targets",
+     "open": {
+      "ee_finger_joint": 0.0
+     },
+     "closed": {
+      "ee_finger_joint": 0.72
+     }
+    },
+    "grasp": "antipodal"
+   }
+  }
+ },
+ "cameras": []
+}

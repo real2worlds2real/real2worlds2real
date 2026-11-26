@@ -1,0 +1,109 @@
+{
+ "schema": "astra_station_tool_v1",
+ "id": "import_real",
+ "family": "data",
+ "description": "Make a dataset from the workspace's real-robot demonstrations, optionally cut to a segment: until={kind: none | label_rise (label, rise_m, extra_steps) | palm_rise (rise_m, extra_steps) | step_fraction (fraction)}, from={kind: none | label_moved (label, moved_m, before_steps)}; pad_hold appends N hold frames (target = measured joints) so a learner learns to stay at the end state. Free (no simulation).",
+ "arguments": {
+  "type": "object",
+  "required": [
+   "name"
+  ],
+  "additionalProperties": false,
+  "properties": {
+   "name": {
+    "type": "string",
+    "pattern": "[a-z][a-z0-9_]{1,40}"
+   },
+   "max_episodes": {
+    "type": "integer",
+    "minimum": 1
+   },
+   "until": {
+    "type": "object",
+    "required": [
+     "kind"
+    ],
+    "properties": {
+     "kind": {
+      "enum": [
+       "none",
+       "label_rise",
+       "palm_rise",
+       "step_fraction"
+      ]
+     },
+     "label": {
+      "type": "string"
+     },
+     "rise_m": {
+      "type": "number",
+      "minimum": 0.005,
+      "maximum": 0.5
+     },
+     "extra_steps": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 200
+     },
+     "fraction": {
+      "type": "number",
+      "minimum": 0.05,
+      "maximum": 1.0
+     }
+    }
+   },
+   "from": {
+    "type": "object",
+    "required": [
+     "kind"
+    ],
+    "properties": {
+     "kind": {
+      "enum": [
+       "none",
+       "label_moved"
+      ]
+     },
+     "label": {
+      "type": "string"
+     },
+     "moved_m": {
+      "type": "number",
+      "minimum": 0.002,
+      "maximum": 0.3
+     },
+     "before_steps": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 200
+     }
+    }
+   },
+   "pad_hold": {
+    "type": "integer",
+    "minimum": 0,
+    "maximum": 120
+   }
+  }
+ },
+ "costs": {
+  "all": "none"
+ },
+ "adapter": {
+  "argv": [
+   "/usr/bin/python3",
+   "{repo}/policy_development/tools/import_real.py",
+   "--binding",
+   "{binding}",
+   "--request",
+   "{request}",
+   "--result",
+   "{result}"
+  ],
+  "timeout_seconds": 3600
+ },
+ "status": "ready",
+ "interfaces": [
+  "cloud_q29"
+ ]
+}

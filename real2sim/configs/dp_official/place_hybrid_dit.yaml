@@ -1,0 +1,13 @@
+defaults:
+  - place_hybrid
+  - _self_
+
+name: train_diffusion_dit_hybrid
+
+policy:
+  _target_: calibrated_scene_reconstruction.policy.dp_official.DiffusionDiTHybridImagePolicy
+  dit:
+    d_model: 768
+    depth: 12
+    heads: 12
+    mlp_ratio: 4.0

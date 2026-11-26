@@ -1,0 +1,89 @@
+{
+ "name": "industrial",
+ "rooms": [
+  "kitchen",
+  "dining",
+  "cafe",
+  "living",
+  "bedroom",
+  "bathroom",
+  "office",
+  "workshop"
+ ],
+ "prompt": "industrial loft style, exposed brick and raw concrete, black steel frames, edison bulbs",
+ "support": [
+  "brushed_concrete",
+  "black_walnut_veneer_01",
+  "granite_tile"
+ ],
+ "floor": [
+  "concrete_floor_02",
+  "dark_wooden_planks"
+ ],
+ "wall_tint": {
+  "concrete": [
+   0.85,
+   0.85,
+   0.85
+  ],
+  "slate": [
+   0.72,
+   0.74,
+   0.78
+  ]
+ },
+ "wall_pbr": [
+  "red_brick",
+  "concrete_wall_003",
+  "grey_plaster"
+ ],
+ "paint": {
+  "charcoal": [
+   0.45,
+   0.45,
+   0.47
+  ],
+  "navy": [
+   0.38,
+   0.48,
+   0.78
+  ],
+  "black": [
+   0.3,
+   0.3,
+   0.32
+  ]
+ },
+ "stain": {
+  "ebony": [
+   0.3,
+   0.27,
+   0.25
+  ],
+  "walnut": [
+   0.55,
+   0.42,
+   0.32
+  ]
+ },
+ "ceiling_tint": [
+  0.85,
+  0.85,
+  0.85
+ ],
+ "hdri": [
+  "canary_wharf",
+  "wide_street_01",
+  "industrial_sunset_puresky"
+ ],
+ "light": {
+  "temp": [
+   3200,
+   4800
+  ],
+  "scale": [
+   0.75,
+   1.1
+  ]
+ }
+}

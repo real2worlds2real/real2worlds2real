@@ -1,0 +1,13 @@
+{
+ "schema": "astra_reward_term_v1",
+ "id": "reach_palm_to_label",
+ "phase": "reach",
+ "description": "Negative palm distance to a labelled object's centroid (or a point offset from it).",
+ "inputs": [
+  "palm_pos",
+  "cloud+labels"
+ ],
+ "formula": "-|palm - (centroid(label) + offset)|",
+ "validated_on": [],
+ "cautions": "Use an offset above the object to avoid pushing it."
+}
