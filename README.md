@@ -1,6 +1,6 @@
-# ASTRA: real2sim2real with an agentic harness
+# Real2Worlds2Real: Scaling Self-Improving Agentic Real2Sim2Real for Robot Manipulation
 
-Code for **Real2Worlds2Real: Scaling Self-Improving Agentic Real2Sim2Real for Robot Manipulation**
+Code for the paper
 (<a href="https://real2worlds2real.github.io" target="_blank" rel="noopener noreferrer">project page</a> · <a href="https://arxiv.org/abs/2611.31098" target="_blank" rel="noopener noreferrer">arXiv:2611.31098</a>).
 
 Jinzhong Gu<sup>1,&#42;</sup>, <a href="https://jiaka1chen.github.io/" target="_blank" rel="noopener noreferrer">Jiakai Chen</a><sup>3,&#42;</sup>, Xinyi Cao<sup>4,&#42;</sup>, <a href="https://sxy7147.github.io/" target="_blank" rel="noopener noreferrer">Yan Shen</a><sup>1,&#42;</sup>,
